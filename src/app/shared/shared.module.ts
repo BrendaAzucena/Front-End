@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -17,8 +18,7 @@ import { MenuComponent } from './menu/menu.component';
 
   exports: [
     HeaderComponent,
-    FooterComponent,
-    MenuComponent
+    FooterComponent
   ],
 })
 export class SharedModule { }

@@ -1,55 +1,59 @@
-.color1 {
+.color1{
     padding-top: 10px;
     background-color: #691831;
     color: white;
-    font-size: 20px;
+    font-size: 23px;
 
 }
 
-.posicion {
+.posicion{
+    
     max-width: 180px;
-    height: auto;
+	height: auto;
     object-fit: scale-down;
+    
 }
 
-.posicion1 {
+.posicion1{
+    
     max-width: 140px;
-    height: auto;
+	height: auto;
     object-fit: scale-down;
 }
 
-.tma {
+.tma{
     font-size: 25px;
 }
-
-.banda {
+.banda{
     background-size: cover;
     width: 100%;
 }
-
 .contenedor-imagenes {
     display: flex;
-}
-
-.img1 {
+  }
+  
+  .img1 {
     margin-right: 15px;
     margin-left: 5px;
     height: 45px;
     width: 200px;
-    margin-top: 12px;
-    object-fit: fill
-}
-
-.img2 {
+  margin-top: 12px;
+    object-fit:fill
+  }
+  .img2 {
     margin-right: 10px;
     margin-left: 8px;
+    
     height: 70px;
     width: 280px;
-    object-fit: fill
-}
+    
+    
+    object-fit:fill
+  }
+  .vertical{
+   border-left: solid #000000 ;
 
-.vertical {
-    border-left: solid #000000;
-}
+
+  }
 
   
