@@ -4,21 +4,23 @@
 }
 
 input {
-    border: solid 1px rgb(134, 134, 134);
+    border: solid 1px #A9A9A9;
+    ;
     margin-top: 5px;
 
 }
 
 .bordeInput {
     margin-top: 30px;
-    margin-top: 5px;
+
 }
 
 
 select {
 
 
-    box-shadow: 1px 1px 3px rgb(122, 122, 122);
+    box-shadow: 1px 1px 3px #A9A9A9;
+    ;
     margin-top: 5px;
 }
 
@@ -30,7 +32,7 @@ select {
 
 .btn {
     width: 150px;
-    height: 50px;
+    height: 60px;
 
 }
 
@@ -42,7 +44,10 @@ select {
     margin-bottom: 5px;
 }
 
+.margintitle {
+    margin-top: 35px;
 
+}
 
 .butto2 {
     background-color: #691831;
@@ -120,14 +125,14 @@ dialog::backdrop {
 dialog .modal-header {
     background-color: #691831;
     color: white;
-    padding: 10px 28%;
+    padding: 15px 32%;
 }
 
 input[type="file"]::file-selector-button {
     display: none;
 }
 
-.file-input{
+.file-input {
     border: none;
     padding-left: 10px;
     width: 200px;

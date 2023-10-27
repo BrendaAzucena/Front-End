@@ -6,6 +6,7 @@ import { MenuComponent } from './menu/menu.component';
 
 
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -18,7 +19,9 @@ import { MenuComponent } from './menu/menu.component';
 
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MenuComponent
+    
   ],
 })
 export class SharedModule { }
