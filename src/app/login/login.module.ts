@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { LoginuserComponent } from './user/loginuser/loginuser.component';
 import { LoginComponent } from './admin/login/login.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 LoginComponent
 
@@ -16,7 +16,8 @@ LoginComponent
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
 
   exports: [

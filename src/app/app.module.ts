@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { PageModule } from './page/page.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -24,9 +25,9 @@ import { PageModule } from './page/page.module';
     AppRoutingModule,
     LoginModule,
     SharedModule,
-    PageModule
-   
-    
+    PageModule,
+    HttpClientModule
+  
     
     
     
