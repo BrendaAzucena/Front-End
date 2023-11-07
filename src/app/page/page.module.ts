@@ -7,9 +7,12 @@ import { SolicitudComponent } from './admin/solicitud/solicitud.component';
 import { EmbarcamayorComponent } from './admin/embarcamayor/embarcamayor.component';
 import { EmbarcamenorComponent } from './admin/embarcamenor/embarcamenor.component';
 import { InstalacuicolaComponent } from './admin/instalacuicola/instalacuicola.component';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditOfiComponent } from './admin/edit-ofi/edit-ofi.component';
+import { ShowOfiComponent } from './admin/show-ofi/show-ofi.component';
 
 
 @NgModule({
@@ -19,11 +22,18 @@ import { InstalacuicolaComponent } from './admin/instalacuicola/instalacuicola.c
     EmbarcamayorComponent,
     EmbarcamenorComponent,
     InstalacuicolaComponent,
+    EditOfiComponent,
+    ShowOfiComponent,
    
   ],
   imports: [
     CommonModule,
     SharedModule,
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
    
   ]
 ,

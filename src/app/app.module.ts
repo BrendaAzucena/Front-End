@@ -7,8 +7,7 @@ import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { PageModule } from './page/page.module';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,7 +25,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginModule,
     SharedModule,
     PageModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   
     
     

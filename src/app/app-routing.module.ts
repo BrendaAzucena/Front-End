@@ -9,6 +9,8 @@ import { EmbarcamayorComponent } from './page/admin/embarcamayor/embarcamayor.co
 import { MenuComponent } from './shared/menu/menu.component';
 import { EmbarcamenorComponent } from './page/admin/embarcamenor/embarcamenor.component';
 import { InstalacuicolaComponent } from './page/admin/instalacuicola/instalacuicola.component';
+import { EditOfiComponent } from './page/admin/edit-ofi/edit-ofi.component';
+import { ShowOfiComponent } from './page/admin/show-ofi/show-ofi.component';
 
 
 LoginComponent
@@ -48,6 +50,14 @@ const routes: Routes = [
   {
     path:'instalacuicola',
     component:InstalacuicolaComponent
+  },
+  {
+    path:'editOfi/:id',
+    component:EditOfiComponent
+  },
+  {
+    path:'show/:ofiid',
+    component:ShowOfiComponent
   },
 
   
