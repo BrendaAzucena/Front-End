@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { SolicitudComponent } from './page/admin/solicitud/solicitud.component';
-import { UniconomicaComponent } from './page/admin/uniconomica/uniconomica.component';
+import { UniconomicaComponent } from './page/admin/unidadeconimica/uniconomica/uniconomica.component';
 import { LoginuserComponent } from './login/user/loginuser/loginuser.component';
 import { LoginComponent } from './login/admin/login/login.component';
 import { EmbarcamayorComponent } from './page/admin/embarcamayor/embarcamayor.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { EmbarcamenorComponent } from './page/admin/embarcamenor/embarcamenor.component';
 import { InstalacuicolaComponent } from './page/admin/instalacuicola/instalacuicola.component';
-import { EditOfiComponent } from './page/admin/edit-ofi/edit-ofi.component';
-import { ShowOfiComponent } from './page/admin/show-ofi/show-ofi.component';
+import { AgregarOfiComponent } from './page/admin/unidadeconimica/agregar-ofi/agregar-ofi.component';
+import { EditOfiComponent } from './page/admin/unidadeconimica/edit-ofi/edit-ofi.component';
 
 
 LoginComponent
@@ -56,8 +56,8 @@ const routes: Routes = [
     component:EditOfiComponent
   },
   {
-    path:'show/:ofiid',
-    component:ShowOfiComponent
+    path:'agregarOfi',
+    component:AgregarOfiComponent
   },
 
   

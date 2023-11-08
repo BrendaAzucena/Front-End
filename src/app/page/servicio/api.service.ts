@@ -4,13 +4,14 @@ import { environment } from 'src/environments/environment';
 import { unidad } from '../admin/interfaces/unidad';
 import { Observable } from 'rxjs';
 import { Oficina } from '../admin/interfaces/Oficina';
+import { oficinaMo } from '../admin/interfaces/oficinaMo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  path = `${environment.API_URL}oficinas`;
+  path = `${environment.API_URL}unidadeconomica_pa`;
 
   constructor(private http: HttpClient) { }
 
@@ -18,30 +19,39 @@ export class ApiService {
     return this.http.get(this.path);
   }
 
-  /*agregar(uni: unidad): Observable<unidad>{
+  agregar(uni: unidad): Observable<unidad>{
     return this.http.post<unidad>(`${this.path}`, uni)
-  }*/
-
-  getOfi(){
-    return this.http.get('http://siipo.test/api/oficinas');
-  }
- 
-  agreOfi(ofi: Oficina): Observable<Oficina>{
-    return this.http.post<Oficina>(`${this.path}`, ofi)
   }
 
   getId(id: any): Observable<any>{
     return this.http.get<any>(this.path+'/'+id);  
   }
 
- 
-  editOfi(id: any ,put:  Oficina):Observable<any>{
-    let direccion = this.path+"/"+ id;
-    return this.http.put<any>(direccion, put)
-  }
-
   eliminar(id:any): Observable<any>{
     return this.http.delete<any>(`${this.path}/${id}`);
+  }
+
+  //OFICINA
+  getOfi(){
+    return this.http.get('http://siipo.test/api/oficinas');
+  }
+  getIdOfi(id: any): Observable<any>{
+    let direccion = "http://siipo.test/api/oficinas/"+id;
+    return this.http.get<any>(direccion);
+  }
+  
+  agreOfi(ofi: Oficina):Observable<Oficina>{
+    let direccion = "http://siipo.test/api/oficinas";
+    return this.http.post<Oficina>(direccion, ofi)
+  }
+
+  delete(id:any):Observable<any>{
+    let direccion = "http://siipo.test/api/oficinas/"+ id;
+    return this.http.delete<any>(direccion);
+  }
+ editOfi(id: any ,put:  Oficina):Observable<Oficina>{
+    let direccion = "http://siipo.test/api/oficinas/"+ id;
+    return this.http.put<Oficina>(direccion, put)
   }
   
 }

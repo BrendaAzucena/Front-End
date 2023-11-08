@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UniconomicaComponent } from './admin/uniconomica/uniconomica.component';
+import { UniconomicaComponent } from './admin/unidadeconimica/uniconomica/uniconomica.component';
 import { SharedModule } from '../shared/shared.module';
 import { SolicitudComponent } from './admin/solicitud/solicitud.component';
 import { EmbarcamayorComponent } from './admin/embarcamayor/embarcamayor.component';
@@ -11,8 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditOfiComponent } from './admin/edit-ofi/edit-ofi.component';
-import { ShowOfiComponent } from './admin/show-ofi/show-ofi.component';
+import { AgregarOfiComponent } from './admin/unidadeconimica/agregar-ofi/agregar-ofi.component';
+import { EditOfiComponent } from './admin/unidadeconimica/edit-ofi/edit-ofi.component';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { ShowOfiComponent } from './admin/show-ofi/show-ofi.component';
     EmbarcamenorComponent,
     InstalacuicolaComponent,
     EditOfiComponent,
-    ShowOfiComponent,
+    AgregarOfiComponent,
    
   ],
   imports: [
