@@ -54,7 +54,10 @@ padding-left: 40px;
     font-size: 25px;
     border:solid 2px rgb(133, 5, 5);
 }
-
+i:hover{
+    color:#ffffff !important;
+    
+    }
     
 .textosolicitud{
     margin-bottom: 40px;

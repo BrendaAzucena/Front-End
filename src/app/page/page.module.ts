@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UniconomicaComponent } from './admin/unidadeconimica/uniconomica/uniconomica.component';
+import { UniconomicaComponent } from './person/uniconomica/uniconomica.component';
 import { SharedModule } from '../shared/shared.module';
-import { SolicitudComponent } from './admin/solicitud/solicitud.component';
-import { EmbarcamayorComponent } from './admin/embarcamayor/embarcamayor.component';
-import { EmbarcamenorComponent } from './admin/embarcamenor/embarcamenor.component';
-import { InstalacuicolaComponent } from './admin/instalacuicola/instalacuicola.component';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from '../app-routing.module';
+import { SolicitudComponent } from './person/solicitud/solicitud.component';
+import { EmbarcamayorComponent } from './person/embarcamayor/embarcamayor.component';
+import { EmbarcamenorComponent } from './person/embarcamenor/embarcamenor.component';
+import { InstalacuicolaComponent } from './person/instalacuicola/instalacuicola.component';
+import { PanelComponent } from './admin/panel/panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AgregarOfiComponent } from './admin/unidadeconimica/agregar-ofi/agregar-ofi.component';
-import { EditOfiComponent } from './admin/unidadeconimica/edit-ofi/edit-ofi.component';
-
+import { OficinasComponent } from './admin/unidadeconomica/oficinas/oficinas.component';
+import { EditOficinaComponent } from './admin/unidadeconomica/edit-oficina/edit-oficina.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CrearOficinaComponent } from './admin/unidadeconomica/crear-oficina/crear-oficina.component';
 
 @NgModule({
   declarations: [
@@ -22,18 +22,19 @@ import { EditOfiComponent } from './admin/unidadeconimica/edit-ofi/edit-ofi.comp
     EmbarcamayorComponent,
     EmbarcamenorComponent,
     InstalacuicolaComponent,
-    EditOfiComponent,
-    AgregarOfiComponent,
+    PanelComponent,
+    OficinasComponent,
+    EditOficinaComponent,
+    CrearOficinaComponent,
    
   ],
   imports: [
     CommonModule,
     SharedModule,
-    HttpClientModule,
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatFormFieldModule
    
   ]
 ,
