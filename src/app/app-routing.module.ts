@@ -71,12 +71,7 @@ const routes: Routes = [
     component:CrearOficinaComponent
   },
 
-  
-  
-  
-  
- 
- 
+
 ];
 
 @NgModule({

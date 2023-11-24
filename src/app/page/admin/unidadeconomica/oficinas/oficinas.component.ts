@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/service/api.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { EditOficinaComponent } from '../edit-oficina/edit-oficina.component';
 
 @Component({
   selector: 'app-oficinas',

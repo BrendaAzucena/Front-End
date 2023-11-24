@@ -15,7 +15,6 @@ export class EditOficinaComponent implements OnInit {
   formuOfi: FormGroup;
   idOficina: any;
   
-  
   @Input() datosOficina: Oficina = { id:'', NombreOficina: '', Ubicacion: '',Telefono: '', Email: '' };
   constructor(private snackBar: MatSnackBar, public formulario: FormBuilder, private api:ApiService,private router:Router, private activate:ActivatedRoute ){
     this.idOficina = this.activate.snapshot.paramMap.get('id');

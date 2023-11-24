@@ -14,6 +14,7 @@ import { EditOficinaComponent } from './admin/unidadeconomica/edit-oficina/edit-
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CrearOficinaComponent } from './admin/unidadeconomica/crear-oficina/crear-oficina.component';
+import { ModalSoliComponent } from './person/modal-soli/modal-soli.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CrearOficinaComponent } from './admin/unidadeconomica/crear-oficina/cre
     OficinasComponent,
     EditOficinaComponent,
     CrearOficinaComponent,
+    ModalSoliComponent,
    
   ],
   imports: [
