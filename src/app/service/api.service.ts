@@ -13,7 +13,7 @@ import { UnidadEconomicaPA } from '../interfaces/unidadE';
 export class ApiService {
  
 
-  path = `${environment.API_URL}oficinas`;
+  path = `${environment.API_URL}unidades_economicas_pa_fisico`;
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +31,10 @@ export class ApiService {
     return this.http.get<UnidadEconomicaPA>(this.path+'/'+UEPAid);  
   }
 
+  agreUni(uni: UnidadEconomicaPA):Observable<UnidadEconomicaPA>{
+    let direccion = "http://localhost:8000/api/unidades_economicas_pa_fisico";
+    return this.http.post<UnidadEconomicaPA>(direccion, uni)
+  }
   //localidad
   getLoc(){
     return this.http.get('http://localhost:8000/api/localidades');
@@ -48,7 +52,7 @@ export class ApiService {
   }
  
   agreOfi(ofi: Oficina):Observable<Oficina>{
-    let direccion = "http://siipo.test/api/oficinas";
+    let direccion = "http://localhost:8000/api/oficinas";
     return this.http.post<Oficina>(direccion, ofi)
   }
 
