@@ -13,6 +13,7 @@ import { PanelComponent } from './page/admin/panel/panel.component';
 import { OficinasComponent } from './page/admin/unidadeconomica/oficinas/oficinas.component';
 import { EditOficinaComponent } from './page/admin/unidadeconomica/edit-oficina/edit-oficina.component';
 import { CrearOficinaComponent } from './page/admin/unidadeconomica/crear-oficina/crear-oficina.component';
+import { EditUnidadFComponent } from './page/person/edit-unidad-f/edit-unidad-f.component';
 
 
 LoginComponent
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path:'uniconomica',
     component:UniconomicaComponent
+  },
+  {
+    path:'uniconomicaF/:id',
+    component:EditUnidadFComponent
   },
   {
     path:'loginuser',

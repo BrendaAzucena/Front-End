@@ -36,21 +36,14 @@
          <div class="row formularyborder">
             <div class="col-md-4 marginput ">
                <div class="form-group">
-                  <div class="d-flex justify-content-between">
-
                      <label class="control-label textoInput">OFICINA:</label>
+                     <select class="form-select " id="" name="Ofcid" formControlName="Ofcid"  #Ofcid>
+                        <option *ngFor="let oficina of oficinas" [value]="oficina.id">{{ oficina.NombreOficina}}</option>
+                    </select>
+                 </div>
 
-                  </div>
-                  <label class="control-label textoInput">OFICINA:</label>
-                  <input class="form-control required" id="" name=""  formControlName="Ofcid" type="text"
-                     required>
-
-                  
                   <p class="vacio" id=""></p>
                </div>
-            </div>
-
-
 
             <div class="col-md-4 marginput">
                <div class="form-group">
@@ -60,14 +53,14 @@
                   <p class="vacio" id=""></p>
                </div>
             </div>
-           
+
             <div class="col-md-4 marginput">
                <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                   <label class="control-label textoInput">CAPTURAR RNPA:</label>
                </div>
-                  <input class="form-control required" id="" name="" formControlName="RNPA" type="text" required>
-                  <p class="vacio" id=""></p>
+               <input class="form-control required" id="" name="" formControlName="RNPA" type="text" required>
+               <p class="vacio" id=""></p>
             </div>
 
 
@@ -168,7 +161,6 @@
 
 
 
-
          <div class="textosolicitud formularyborder " style=" font-family: 'Montserrat'; margin-top:30px;">
 
             <div>
@@ -226,9 +218,10 @@
 
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">Localidad<span id="">*</span>:</label>
-                  <input class="form-control required" id="" name="" formControlName="Locid" type="text"
-                     required>
+                  <label class="control-label textoInput">OFICINA:</label>
+                     <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
+                        <option *ngFor="let localidad of localidades" [value]="localidad.id">{{ localidad.NombreLocalidad}}</option>
+                    </select>
                   <p class="vacio" id=""></p>
                </div>
             </div>
@@ -366,9 +359,9 @@
             <div>
                <label class="control-label textoInput">ACTIVIDAD PESQUERA:</label>
                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActvAcuacultura">
-                <label class="form-check-label" for="ActvAcuacultura">
-                  ACTIVIDAD ACUACULTURA
+                  <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActvAcuacultura" >
+                  <label class="form-check-label" for="ActvAcuacultura">
+                     ACTIVIDAD ACUACULTURA
                   </label>
                </div>
                <div class="form-check">
@@ -426,12 +419,12 @@
             </div>
             <!--FIN PRUEBA-->
 
-            
+
             <div>
                <label class="control-label textoInput">ACTIVOS:</label>
                <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActivoEmbMayor">
-                <label class="form-check-label" for="activoEmbMayor">
+                  <label class="form-check-label" for="activoEmbMayor">
                      EMBARCACIONES MAYORES
                   </label>
                </div>
@@ -443,7 +436,7 @@
                </div>
             </div>
          </div>
-          
+
          <button class="btn botones"
             style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 5%;">Guardar</button>
       </form>

@@ -1,5 +1,5 @@
 export interface UnidadEconomicaPA {
-    id: number;
+    id: string;
     FechaRegistro: string;
     Ofcid: string;
     RNPA: string;

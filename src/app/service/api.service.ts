@@ -22,7 +22,7 @@ export class ApiService {
   }
 
 
-  //Datos generalesPa
+  //Datos generalesPaFissica
   agreDa(dat: Datosge): Observable<Datosge>{
     return this.http.post<Datosge>(`${this.path}`, dat)
   }
@@ -35,6 +35,15 @@ export class ApiService {
     let direccion = "http://localhost:8000/api/unidades_economicas_pa_fisico";
     return this.http.post<UnidadEconomicaPA>(direccion, uni)
   }
+
+  editUnidadF(id: any ,put:  UnidadEconomicaPA):Observable<UnidadEconomicaPA>{
+    let direccion = this.path+"/"+ id;
+    return this.http.put<UnidadEconomicaPA>(direccion, put)
+  }
+
+  getIdUnidadF(id:any):Observable<UnidadEconomicaPA>{
+    return this.http.get<UnidadEconomicaPA>(this.path+'/'+id);  
+  }
   //localidad
   getLoc(){
     return this.http.get('http://localhost:8000/api/localidades');
@@ -43,9 +52,6 @@ export class ApiService {
   getMuni(){
     return this.http.get('http://localhost:8000/api/municipios');
   }
-  /*agregar(uni: unidad): Observable<unidad>{
-    return this.http.post<unidad>(`${this.path}`, uni)
-  }*/
 
   getOfi(){
     return this.http.get('http://localhost:8000/api/oficinas');
