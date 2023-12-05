@@ -218,68 +218,55 @@
 
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">OFICINA:</label>
+                  <label class="control-label textoInput">Localidad:</label>
                      <select class="form-select " id="" name="Locid" formControlName="Locid" #Locid>
                         <option *ngFor="let localidad of localidades" [value]="localidad.id">{{ localidad.NombreLocalidad}}</option>
                     </select>
                   <p class="vacio" id=""></p>
                </div>
             </div>
-            <!--
+           
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO PRINCIPAL<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmPrincipal" formControlName="NmPrincipal" type="text">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
 
                <div class="col-md-4 marginput">
                   <div class="form-group">
-                     <label class="control-label textoInput">MUNICIPIO:</label>
-                     <select class="form-select required" id="" name="">
-                        <option value="0">Selecciona una opción</option>
-                        <option *ngFor="let mun of municipios">{{ mun.NombreMunicipio }}</option>
+                     <label class="control-label textoInput">TIPO PRINCIPAL:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmPrincipal" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
                      </select>
                      <p class="vacio" id=""></p>
                   </div>
                </div>
-               <div class="col-md-4 marginput">
-                  <div class="form-group">
-                     <label class="control-label textoInput">DISTRITO:</label>
-                     <select class="form-select required" id="" name="">
-                        <option value="0">Selecciona una opción</option>
-                        <option value="1">Persona fisica</option>
-                     </select>
-                     <p class="vacio" id=""></p>
-                  </div>
-               </div>
-               <div class="col-md-4 marginput">
-                  <div class="form-group">
-                     <label class="control-label textoInput">REGIÓN:</label>
-                     <select class="form-select required" id="" name="">
-                        <option value="0">Selecciona una opción</option>
-                        <option value="1">Persona fisica</option>
-                     </select>
-                     <p class="vacio" id=""></p>
-                  </div>
-               </div>
-               <div class="col-md-4 marginput">
-                  <div class="form-group">
-                     <label class="control-label textoInput">TELEFONO<span id="">*</span>:</label>
-                     <input class="form-control required" id="" name="" type="text">
-                     <p class="vacio" id=""></p>
-                  </div>
-               </div>
-               
-               <div class="col-md-4 marginput">
-                  <div class="form-group">
-                     <label class="control-label textoInput">TIPO:</label>
-                     <select class="form-select required" id="" name="">
-                        <option value="0">Selecciona una opción</option>
-                        <option value="1">Persona fisica</option>
-                        <option value="2">Persona moral</option>
-                        <option value="3">Ambas</option>
-                     </select>
-                     <p class="vacio" id=""></p>
-                  </div>
-               </div>
-            -->
 
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TELEFONO SECUNDARIO<span id="">*</span>:</label>
+                     <input class="form-control required" id="" name="NmSecundario" formControlName="NmSecundario" type="text">
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
 
+               <div class="col-md-4 marginput">
+                  <div class="form-group">
+                     <label class="control-label textoInput">TIPO SECUNDARIO:</label>
+                     <select class="form-select required" id="" name="" formControlName="TpNmSecundario" required>
+                        <option selected>Selecciona una opción</option>
+                        <option value="CASA">CASA</option>
+                        <option value="MOVIL">MOVIL</option>
+                        <option value="OFICINA">OFICINA</option>
+                     </select>
+                     <p class="vacio" id=""></p>
+                  </div>
+               </div>
 
 
 

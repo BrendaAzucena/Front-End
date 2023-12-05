@@ -17,6 +17,10 @@ export interface UnidadEconomicaPA {
     NmInterior: string;
     CodigoPostal: string;
     Locid: string;
+    NmPrincipal: string;
+    TpNmPrincipal: string;
+    NmSecundario: string;
+    TpNmSecundario: string;
     IniOperaciones: string;
     ActivoEmbMayor: string;
     ActivoEmbMenor: string;

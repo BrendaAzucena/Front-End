@@ -14,6 +14,9 @@ import { OficinasComponent } from './page/admin/unidadeconomica/oficinas/oficina
 import { EditOficinaComponent } from './page/admin/unidadeconomica/edit-oficina/edit-oficina.component';
 import { CrearOficinaComponent } from './page/admin/unidadeconomica/crear-oficina/crear-oficina.component';
 import { EditUnidadFComponent } from './page/person/edit-unidad-f/edit-unidad-f.component';
+import { ArtePComponent } from './page/admin/arte-p/arte-p.component';
+import { EspeciesComponent } from './page/admin/especies/especies.component';
+import { ProductosComponent } from './page/admin/productos/productos.component';
 
 
 LoginComponent
@@ -74,8 +77,20 @@ const routes: Routes = [
   {
     path:'agregarOfi',
     component:CrearOficinaComponent
+  }
+  ,
+  {
+    path:'aretePes',
+    component:ArtePComponent
   },
-
+  {
+    path:'especies',
+    component:EspeciesComponent
+  },
+  {
+    path:'productos',
+    component:ProductosComponent
+  },
 
 ];
 

@@ -6,6 +6,9 @@ import { Roles } from '../interfaces/roles';
 import { Oficina } from '../interfaces/oficina';
 import { Datosge } from '../interfaces/datosg';
 import { UnidadEconomicaPA } from '../interfaces/unidadE';
+import { artePesca } from '../interfaces/artePesca';
+import { especies } from '../interfaces/especies';
+import { productos } from '../interfaces/productos';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +47,32 @@ export class ApiService {
   getIdUnidadF(id:any):Observable<UnidadEconomicaPA>{
     return this.http.get<UnidadEconomicaPA>(this.path+'/'+id);  
   }
+  //Arte_Pesca 
+  agreArt(pesca: artePesca):Observable<artePesca>{
+    let direccion = "http://localhost:8000/api/artes_pesca";
+    return this.http.post<artePesca>(direccion, pesca)
+  } 
+  getArt(){
+    return this.http.get('http://localhost:8000/api/artes_pesca');
+  } 
+  
+  //Especies 
+  agreEsp(especie: especies):Observable<especies>{
+    let direccion = "http://localhost:8000/api/especies";
+    return this.http.post<especies>(direccion, especie)
+  } 
+
+  getEspecie(){
+    return this.http.get('http://localhost:8000/api/especies');
+  }
+  //Productos
+  agreProduc(producto: productos ):Observable<productos>{
+    let direccion = "http://localhost:8000/api/productos";
+    return this.http.post<productos>(direccion, producto)
+  } 
+  getProd(){
+    return this.http.get('http://localhost:8000/api/productos');
+  } 
   //localidad
   getLoc(){
     return this.http.get('http://localhost:8000/api/localidades');

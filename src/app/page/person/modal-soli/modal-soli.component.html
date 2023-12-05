@@ -11,14 +11,17 @@
         <div class="justify-content-start">
             <div>
                 <p class="textonormal titu">Proceso:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                <select class="form-select"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
                     <option disabled selected>Selecciona una opción</option>
                     <option value="1">RNPA</option>
                 </select>
             </div>
             <div>
                 <p class="textonormal titu">Modalidad:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;" [(ngModel)]="modalidad">
+                <select class="form-select"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;"
+                    [(ngModel)]="modalidad">
                     <option disabled selected>Selecciona una opción</option>
                     <option value="unidad_economica">Unidad económica</option>
                     <option value="embarcaciones_mayores">Embarcaciones mayores</option>
@@ -28,49 +31,54 @@
             </div>
             <div *ngIf="modalidad === 'unidad_economica'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                <select class="form-select" [(ngModel)]="tipoSolicitud"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
                     <option disabled selected>Selecciona una opción</option>
-                    <option value="unidad_economica">Modificar dirección y teléfonos</option>
-                    <option value="unidad_economica">Modificar email</option>
-                    <option value="unidad_economica">Modificar RFC</option>
-                    <option value="unidad_economica">Alta</option>
-                    <option value="unidad_economica">Modificar número colaboradore</option>
+                    <option value="alta">Alta</option>
+                    <option value="modificarRFC">Modificar RFC</option>
+                    <option value="modificarEmail">Modificar email</option>
+                    <option value="modificarColaboradores">Modificar número colaboradores</option>
+                    <option value="modificarDireccion">Modificar dirección y teléfonos</option>
                 </select>
             </div>
+
             <div *ngIf="modalidad === 'embarcaciones_mayores'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                <select class="form-select"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
                     <option disabled selected>Selecciona una opción</option>
-                    <option value="embarcaciones_mayores">Modificar características físicas</option>
-                    <option value="embarcaciones_mayores">Modificar motor</option>
-                    <option value="embarcaciones_mayores">Modificar arte y/o equipo de pesca</option>
                     <option value="embarcaciones_mayores">Alta de expediente</option>
                     <option value="embarcaciones_mayores">Alta por cambio de propietario o arrendamiento</option>
+                    <option value="embarcaciones_mayores">Modificar motor</option>
+                    <option value="embarcaciones_mayores">Modificar características físicas</option>
+                    <option value="embarcaciones_mayores">Modificar arte y/o equipo de pesca</option>
                 </select>
             </div>
             <div *ngIf="modalidad === 'embarcaciones_menores'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                <select class="form-select"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
                     <option disabled selected>Selecciona una opción</option>
                     <option value="embarcaciones_menores">Alta</option>
                     <option value="embarcaciones_menores">Alta de expediente</option>
-                    <option value="embarcaciones_menores">Modificar motor</option>
-                    <option value="embarcaciones_menores">Modificar características físicas</option>
-                    <option value="embarcaciones_menores">Modificar matricula</option>
                     <option value="embarcaciones_menores">Alta por cambio de propietario</option>
+                    <option value="embarcaciones_menores">Modificar motor</option>
+                    <option value="embarcaciones_menores">Modificar matricula</option>
+                    <option value="embarcaciones_menores">Modificar características físicas</option>
                 </select>
             </div>
             <div *ngIf="modalidad === 'instalaciones_acuicolas'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
-                <select class="form-select" style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                <select class="form-select"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
                     <option disabled selected>Selecciona una opción</option>
-                    <option value="instalaciones_acuicolas">Modificar activos para producción</option>
+                    <option value="instalaciones_acuicolas">Alta</option>
+                    <option value="instalaciones_acuicolas">Modificar modelo</option>
+                    <option value="instalaciones_acuicolas">Modificar ubicación</option>
                     <option value="instalaciones_acuicolas">Modificar especie objetivo</option>
                     <option value="instalaciones_acuicolas">Modificar capacidad de producción</option>
-                    <option value="instalaciones_acuicolas">Modificar modelo</option>
-                    <option value="instalaciones_acuicolas">Alta</option>
-                    <option value="instalaciones_acuicolas">Modificar ubicación</option>
-                    <option value="instalaciones_acuicolas">Modificar uso, alta de expediente,</option>
+                    <option value="instalaciones_acuicolas">Modificar uso, alta de expediente</option>
+                    <option value="instalaciones_acuicolas">Modificar activos para producción</option>
                     <option value="instalaciones_acuicolas">Modificar tipo y alta por cambio de propietario o
                         arrendamiento</option>
                 </select>
@@ -79,8 +87,10 @@
         <button class="butto2 button2" mat-button [mat-dialog-close]="true" style=" margin-left: 50px;">Cancelar
             <i class="bi bi-x"></i>
         </button>
-        <button class="butto button1">Aceptar
+        <button class="butto button1" (click)="onAceptarClick()">
+            Aceptar
             <i class="bi bi-check-lg"></i>
         </button>
+
     </div>
 </div>

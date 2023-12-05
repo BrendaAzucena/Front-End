@@ -33,6 +33,10 @@ export class UniconomicaComponent implements OnInit {
     NmInterior: [''],
     CodigoPostal: [''],
     Locid: [''],
+    NmPrincipal: [''],
+    TpNmPrincipal: [''],
+    NmSecundario: [''],
+    TpNmSecundario: [''],
     IniOperaciones: [''],
     ActivoEmbMayor: [false],
     ActivoEmbMenor: [false],
@@ -79,7 +83,7 @@ enviar(): any {
   this.api.agreUni(this.FormUni.value).subscribe(() => {
     this.router.navigateByUrl('solicitud', { skipLocationChange: false }).then(() => {
       this.router.navigate(['solicitud']);
-      this.mostrarSnackBar('SE AGREGO CON EXTITO', 'success-snackbar');
+      this.mostrarSnackBar('SE AGREGO CON ÉXITO', 'success-snackbar');
     });
   });
 }

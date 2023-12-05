@@ -19,7 +19,7 @@ export class EditUnidadFComponent implements OnInit {
   @Input() datosUnidadF: UnidadEconomicaPA = {
     id: '', FechaRegistro: '', Ofcid: '', RNPA: '', RFC: '', CURP: '', Nombres: '', ApPaterno: '',
     ApMaterno: '', FechaNacimiento: '', Sexo: '', GrupoSanguineo: '', Email: '', Calle: '', NmExterior: '', NmInterior: '', CodigoPostal: '',
-    Locid: '', IniOperaciones: '', ActivoEmbMayor: '', ActivoEmbMenor: '', ActvAcuacultura: '', ActvPesca: '', DocActaNacimiento: '',
+    Locid: '', NmPrincipal: '', TpNmPrincipal: '', NmSecundario: '', TpNmSecundario: '',IniOperaciones: '', ActivoEmbMayor: '', ActivoEmbMenor: '', ActvAcuacultura: '', ActvPesca: '', DocActaNacimiento: '',
     DocComprobanteDomicilio: '', DocCURP: '', DocIdentificacionOfc: '', DocRFC: ''
   };
   constructor(private snackBar: MatSnackBar, public formulario: FormBuilder, private api: ApiService, private router: Router, private activate: ActivatedRoute) {
@@ -45,15 +45,19 @@ export class EditUnidadFComponent implements OnInit {
         NmInterior: datosUnidadF[0]['NmInterior'],
         CodigoPostal: datosUnidadF[0]['CodigoPostal'],
         Locid: datosUnidadF[0]['Locid'],
+        NmPrincipal: datosUnidadF[0]['NmPrincipal'],
+        TpNmPrincipal: datosUnidadF[0]['TpNmPrincipal'],
+        NmSecundario: datosUnidadF[0]['NmSecundario'],
+        TpNmSecundario: datosUnidadF[0]['TpNmSecundario'],
         IniOperaciones: datosUnidadF[0]['IniOperaciones'],
-        ActivoEmbMayor: datosUnidadF[0]['ActivoEmbMayor'],
-        ActivoEmbMenor: datosUnidadF[0]['ActivoEmbMenor'],
-        ActvAcuacultura: datosUnidadF[0]['ActvAcuacultura'],
-        ActvPesca: datosUnidadF[0]['ActvPesca'],
+        ActivoEmbMayor: !!datosUnidadF[0]['ActivoEmbMayor'],
+        ActivoEmbMenor: !!datosUnidadF[0]['ActivoEmbMenor'],
+        ActvAcuacultura: !!datosUnidadF[0]['ActvAcuacultura'],
+        ActvPesca: !!datosUnidadF[0]['ActvPesca'],
         DocActaNacimiento: datosUnidadF[0]['DocActaNacimiento'],
         DocComprobanteDomicilio: datosUnidadF[0]['DocComprobanteDomicilio'],
         DocCURP: datosUnidadF[0]['DocCURP'],
-        DocIdentificacionOfc: datosUnidadF[0]['Locid'],
+        DocIdentificacionOfc: datosUnidadF[0]['DocIdentificacionOfc'],
         DocRFC: datosUnidadF[0]['DocRFC']
       }
       );
@@ -79,10 +83,10 @@ export class EditUnidadFComponent implements OnInit {
       CodigoPostal: [''],
       Locid: [''],
       IniOperaciones: [''],
-      ActivoEmbMayor: [''],
-      ActivoEmbMenor: [''],
-      ActvAcuacultura: [''],
-      ActvPesca: [''],
+      ActivoEmbMayor: [false],
+      ActivoEmbMenor: [false],
+      ActvAcuacultura: [false],
+      ActvPesca: [false],
       DocActaNacimiento: [''],
       DocComprobanteDomicilio: [''],
       DocCURP: [''],
@@ -118,6 +122,10 @@ export class EditUnidadFComponent implements OnInit {
       console.log('Oficinas:', this.oficinas);
     });
   }
+
+  cancelar() {
+    this.router.navigateByUrl('solicitud');
+}
 
   put() {
     console.log(this.formUnid);

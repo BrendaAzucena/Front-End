@@ -38,19 +38,21 @@
                 <div class="col-md-4 marginput ">
                     <div class="form-group">
                         <label class="control-label textoInput">OFICINA:</label>
-                        <select class="form-select " id="" name="Ofcid" formControlName="Ofcid"
-                            [(ngModel)]="datosUnidadF.Ofcid" >
-                            <option *ngFor="let oficina of oficinas" value="oficina.NombreOficina">{{ oficina.NombreOficina}}</option>
+                        <select class="form-select" id="" name="Ofcid" formControlName="Ofcid" [(ngModel)]="datosUnidadF.Ofcid">
+                            <option *ngFor="let oficina of oficinas" [value]="oficina.id" >
+                                {{ oficina.NombreOficina }}
+                            </option>
                         </select>
                     </div>
+                    
+                    
                     <p class="vacio" id=""></p>
                 </div>
-
                 <div class="col-md-4 marginput">
                     <div class="form-group">
                         <label class="control-label textoInput">FECHA:</label>
                         <input class="form-control " id="" name="" formControlName="FechaRegistro"
-                            [(ngModel)]="datosUnidadF.FechaRegistro" type="date" >
+                            [(ngModel)]="datosUnidadF.FechaRegistro" type="date">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -60,8 +62,8 @@
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="control-label textoInput">CAPTURAR RNPA:</label>
                     </div>
-                    <input class="form-control " id="" name="" formControlName="RNPA"
-                        [(ngModel)]="datosUnidadF.RNPA" type="text" >
+                    <input class="form-control " id="" name="" formControlName="RNPA" [(ngModel)]="datosUnidadF.RNPA"
+                        type="text">
                     <p class="vacio" id=""></p>
                 </div>
 
@@ -81,7 +83,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">CORREO ELECTRONICO:</label>
                         <input class="form-control " id="" name="" formControlName="Email"
-                            [(ngModel)]="datosUnidadF.Email" type="text" >
+                            [(ngModel)]="datosUnidadF.Email" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -89,7 +91,7 @@
                 <div class="col-md-4 marginput">
                     <div class="form-group">
                         <label class="control-label textoInput">CURP:</label>
-                        <input formControlName="CURP" [(ngModel)]="datosUnidadF.CURP" type="text" 
+                        <input formControlName="CURP" [(ngModel)]="datosUnidadF.CURP" type="text"
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||  ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"
                             class="form-control " style="text-transform: uppercase;">
                         <p class="vacio" id=""></p>
@@ -99,8 +101,8 @@
                 <div class="col-md-4 marginput">
                     <div class="form-group">
                         <label class="control-label textoInput">RFC:</label>
-                        <input class="form-control " id="" name="" formControlName="RFC"
-                            [(ngModel)]="datosUnidadF.RFC" type="text" >
+                        <input class="form-control " id="" name="" formControlName="RFC" [(ngModel)]="datosUnidadF.RFC"
+                            type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -109,7 +111,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">NOMBRES(S):</label>
                         <input class="form-control " id="" name="" formControlName="Nombres"
-                            [(ngModel)]="datosUnidadF.Nombres" type="text" >
+                            [(ngModel)]="datosUnidadF.Nombres" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -118,7 +120,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">APELLIDO PATERNO:</label>
                         <input class="form-control " id="" name="" formControlName="ApPaterno"
-                            [(ngModel)]="datosUnidadF.ApPaterno" type="text" >
+                            [(ngModel)]="datosUnidadF.ApPaterno" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -127,7 +129,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">APELLIDO MATERNO:</label>
                         <input class="form-control " id="" name="" formControlName="ApMaterno"
-                            [(ngModel)]="datosUnidadF.ApMaterno" type="text" >
+                            [(ngModel)]="datosUnidadF.ApMaterno" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -136,7 +138,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">FECHA DE NACIMIENTO:</label>
                         <input class="form-control " id="" name="" formControlName="FechaNacimiento"
-                            [(ngModel)]="datosUnidadF.FechaNacimiento" type="date" >
+                            [(ngModel)]="datosUnidadF.FechaNacimiento" type="date">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">SEXO:</label>
                         <select class="form-select " id="" name="" formControlName="Sexo"
-                            [(ngModel)]="datosUnidadF.Sexo" >
+                            [(ngModel)]="datosUnidadF.Sexo">
                             <option selected>Selecciona una opción</option>
                             <option value="F">F</option>
                             <option value="M">M</option>
@@ -158,7 +160,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">GRUPO SANGUINEO:</label>
                         <input class="form-control " id="" name="" formControlName="GrupoSanguineo"
-                            [(ngModel)]="datosUnidadF.GrupoSanguineo" type="text" >
+                            [(ngModel)]="datosUnidadF.GrupoSanguineo" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -193,7 +195,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">CALLE:</label>
                         <input class="form-control " id="" name="" formControlName="Calle"
-                            [(ngModel)]="datosUnidadF.Calle" type="text" >
+                            [(ngModel)]="datosUnidadF.Calle" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -201,7 +203,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">NUMERO EXTERIOR<span id="">*</span>:</label>
                         <input class="form-control " id="" Name="" formControlName="NmExterior"
-                            [(ngModel)]="datosUnidadF.NmExterior" type="text" >
+                            [(ngModel)]="datosUnidadF.NmExterior" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -211,7 +213,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">NUMERO INTERIOR<span id="">*</span>:</label>
                         <input class="form-control " id="" name="" formControlName="NmInterior"
-                            [(ngModel)]="datosUnidadF.NmInterior" type="text" >
+                            [(ngModel)]="datosUnidadF.NmInterior" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -223,7 +225,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">CODIGO POSTAL<span id="">*</span>:</label>
                         <input class="form-control " id="" name="" formControlName="CodigoPostal"
-                            [(ngModel)]="datosUnidadF.CodigoPostal" type="text" >
+                            [(ngModel)]="datosUnidadF.CodigoPostal" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -232,8 +234,9 @@
                     <div class="form-group">
                         <label class="control-label textoInput">LOCALIDAD:</label>
                         <select class="form-select " id="" name="Locid" formControlName="Locid"
-                        [(ngModel)]="datosUnidadF.Locid" >
-                            <option *ngFor="let localidad of localidades" value="localidad.NombreLocalidad">{{ localidad.NombreLocalidad}}</option>
+                            [(ngModel)]="datosUnidadF.Locid">
+                            <option *ngFor="let localidad of localidades" [value]="localidad.id">{{
+                                localidad.NombreLocalidad}}</option>
                         </select>
                         <p class="vacio" id=""></p>
                     </div>
@@ -364,23 +367,26 @@
                     <div class="form-group">
                         <label class="control-label textoInput">FECHA DE OPERACIONES</label>
                         <input class="form-control  input" id="" name="" formControlName="IniOperaciones"
-                            [(ngModel)]="datosUnidadF.IniOperaciones" type="date" >
+                            [(ngModel)]="datosUnidadF.IniOperaciones" type="date">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
+                <div>
+                    <p class="textoInput">
+                        <strong>ACTIVIDAD PESQUERA:</strong>
+                    <p>
+                </div>
 
                 <div>
-                    <label class="control-label textoInput">ACTIVIDAD PESQUERA:</label>
-                    <div class="form-check">
+                    <div class="form-check form-check-inline col-md-4">
                         <input class="form-check-input" type="checkbox" id="activoEmbMayor"
-                            formControlName="ActvAcuacultura" [(ngModel)]="datosUnidadF.ActvAcuacultura">
+                            formControlName="ActvAcuacultura">
                         <label class="form-check-label" for="ActvAcuacultura">
                             ACTIVIDAD ACUACULTURA
                         </label>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca"
-                            [(ngModel)]="datosUnidadF.ActvPesca">
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca">
                         <label class="form-check-label" for="ActvPesca">
                             ACTIVIDAD PESQUERA
                         </label>
@@ -392,7 +398,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">DocActaNacimiento</label>
                         <input class="form-control  input" id="" name="" formControlName="DocActaNacimiento"
-                            [(ngModel)]="datosUnidadF.DocActaNacimiento" type="text" >
+                            [(ngModel)]="datosUnidadF.DocActaNacimiento" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -400,9 +406,8 @@
                 <div class="col-md-4 marginput">
                     <div class="form-group">
                         <label class="control-label textoInput">DocComprobanteDomicilio</label>
-                        <input class="form-control  input" id="" name=""
-                            formControlName="DocComprobanteDomicilio" [(ngModel)]="datosUnidadF.DocComprobanteDomicilio"
-                            type="text" >
+                        <input class="form-control  input" id="" name="" formControlName="DocComprobanteDomicilio"
+                            [(ngModel)]="datosUnidadF.DocComprobanteDomicilio" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -411,7 +416,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">DocCURP</label>
                         <input class="form-control  input" id="" name="" formControlName="DocCURP"
-                            [(ngModel)]="datosUnidadF.DocCURP" type="text" >
+                            [(ngModel)]="datosUnidadF.DocCURP" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -420,7 +425,7 @@
                     <div class="form-group">
                         <label class="control-label textoInput">DocIdentificacionOfc</label>
                         <input class="form-control  input" id="" name="" formControlName="DocIdentificacionOfc"
-                            [(ngModel)]="datosUnidadF.DocIdentificacionOfc" type="text" >
+                            [(ngModel)]="datosUnidadF.DocIdentificacionOfc" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
@@ -429,25 +434,29 @@
                     <div class="form-group">
                         <label class="control-label textoInput">DocRFC</label>
                         <input class="form-control  input" id="" name="" formControlName="DocRFC"
-                            [(ngModel)]="datosUnidadF.DocRFC" type="text" >
+                            [(ngModel)]="datosUnidadF.DocRFC" type="text">
                         <p class="vacio" id=""></p>
                     </div>
                 </div>
                 <!--FIN PRUEBA-->
 
+                <div>
+                    <p class="textoInput">
+                        <strong>ACTIVOS:</strong>
+                    <p>
+                </div>
 
                 <div>
-                    <label class="control-label textoInput">ACTIVOS:</label>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="activoEmbMayor"
-                            formControlName="ActivoEmbMayor" [(ngModel)]="datosUnidadF.ActivoEmbMayor">
+                    <div class="form-check form-check-inline col-md-4">
+                        <input class="form-check-input" type="checkbox" id="ActivoEmbMayor"
+                            formControlName="ActivoEmbMayor">
                         <label class="form-check-label" for="activoEmbMayor">
                             EMBARCACIONES MAYORES
                         </label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check form-check-inline col-md-4">
                         <input class="form-check-input" type="checkbox" id="activoEmbMenor"
-                            formControlName="ActivoEmbMenor" [(ngModel)]="datosUnidadF.ActivoEmbMenor">
+                            formControlName="ActivoEmbMenor">
                         <label class="form-check-label" for="activoEmbMenor">
                             EMBARCACIONES MENORES
                         </label>
@@ -455,8 +464,17 @@
                 </div>
             </div>
 
-            <button class="btn botones"
-                style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 5%;">Guardar</button>
+            <div class="row">
+                <div class="col-md-12">
+                   <div class="pull-left">
+                      <p class="top_10">* Campos obligatorios</p>
+                   </div>
+                   <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+                      <button class="btn btn-default botones" (click)="cancelar()" height="40px;" style="background-color: rgb(110, 109, 109); color:white;">Cancelar</button>
+                      <button class="btn botones"  style="background-color: brown; color:white;" >Guardar</button>
+                   </div>
+                </div>
+             </div>
         </form>
     </div>
 </section>

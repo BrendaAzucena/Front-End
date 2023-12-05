@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CrearOficinaComponent } from './admin/unidadeconomica/crear-oficina/crear-oficina.component';
 import { ModalSoliComponent } from './person/modal-soli/modal-soli.component';
 import { EditUnidadFComponent } from './person/edit-unidad-f/edit-unidad-f.component';
+import { ArtePComponent } from './admin/arte-p/arte-p.component';
+import { EspeciesComponent } from './admin/especies/especies.component';
+import { ProductosComponent } from './admin/productos/productos.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { EditUnidadFComponent } from './person/edit-unidad-f/edit-unidad-f.compo
     CrearOficinaComponent,
     ModalSoliComponent,
     EditUnidadFComponent,
+    ArtePComponent,
+    EspeciesComponent,
+    ProductosComponent,
    
   ],
   imports: [
