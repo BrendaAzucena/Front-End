@@ -13,8 +13,7 @@
                 <p class="textonormal titu">Proceso:</p>
                 <select class="form-select"
                     style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
-                    <option disabled selected>Selecciona una opción</option>
-                    <option value="1">RNPA</option>
+                   <option value="1" selected>RNPA</option>
                 </select>
             </div>
             <div>
@@ -22,27 +21,38 @@
                 <select class="form-select"
                     style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;"
                     [(ngModel)]="modalidad">
-                    <option disabled selected>Selecciona una opción</option>
-                    <option value="unidad_economica">Unidad económica</option>
-                    <option value="embarcaciones_mayores">Embarcaciones mayores</option>
+                    <option value="unidad_economicaF">Unidad económica Fisica</option>
+                    <option value="unidad_economicaM">Unidad económica Moral</option>
+                 <!--  <option value="embarcaciones_mayores">Embarcaciones mayores</option>
                     <option value="embarcaciones_menores">Embarcaciones menores</option>
-                    <option value="instalaciones_acuicolas">Instalaciones acuícolas</option>
+                    <option value="instalaciones_acuicolas">Instalaciones acuícolas</option> -->
                 </select>
             </div>
-            <div *ngIf="modalidad === 'unidad_economica'">
+            <div *ngIf="modalidad === 'unidad_economicaF'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
                 <select class="form-select" [(ngModel)]="tipoSolicitud"
                     style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
-                    <option disabled selected>Selecciona una opción</option>
-                    <option value="alta">Alta</option>
-                    <option value="modificarRFC">Modificar RFC</option>
+                    <option value="altaF">Alta</option>
+                   <!--- <option value="modificarRFC">Modificar RFC</option>
                     <option value="modificarEmail">Modificar email</option>
                     <option value="modificarColaboradores">Modificar número colaboradores</option>
-                    <option value="modificarDireccion">Modificar dirección y teléfonos</option>
+                    <option value="modificarDireccion">Modificar dirección y teléfonos</option> --> 
                 </select>
             </div>
 
-            <div *ngIf="modalidad === 'embarcaciones_mayores'">
+            <div *ngIf="modalidad === 'unidad_economicaM'">
+                <p class="textonormal titu">Tipo de solicitud:</p>
+                <select class="form-select" [(ngModel)]="tipoSolicitud"
+                    style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
+                    <option value="altaM">Alta</option>
+                   <!--- <option value="modificarRFC">Modificar RFC</option>
+                    <option value="modificarEmail">Modificar email</option>
+                    <option value="modificarColaboradores">Modificar número colaboradores</option>
+                    <option value="modificarDireccion">Modificar dirección y teléfonos</option> --> 
+                </select>
+            </div>
+
+            <!--  <div *ngIf="modalidad === 'embarcaciones_mayores'">
                 <p class="textonormal titu">Tipo de solicitud:</p>
                 <select class="form-select"
                     style="font-family: 'Montserrat'; font-size:17px; width: 390px; border: 1px solid #d9d3d3; box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15); margin-bottom:3%;">
@@ -82,13 +92,12 @@
                     <option value="instalaciones_acuicolas">Modificar tipo y alta por cambio de propietario o
                         arrendamiento</option>
                 </select>
-            </div>
-        </div>
+            </div> --> 
         <button class="butto2 button2" mat-button [mat-dialog-close]="true" style=" margin-left: 50px;">Cancelar
             <i class="bi bi-x"></i>
         </button>
         <button class="butto button1" (click)="onAceptarClick()">
-            Aceptar
+            Rellenar
             <i class="bi bi-check-lg"></i>
         </button>
 

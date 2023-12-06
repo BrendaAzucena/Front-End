@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./modal-soli.component.css']
 })
 export class ModalSoliComponent {
-  tipoSolicitud: string = '';
-  modalidad: string = "unidad_economica";
+  tipoSolicitud: string = 'altaF';
+  modalidad: string = "unidad_economicaF";
   constructor(
     public dialogRef: MatDialogRef<ModalSoliComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private router: Router) {
     if (data && data.modalidad) {
@@ -18,23 +18,23 @@ export class ModalSoliComponent {
 
   onAceptarClick() {
     switch (this.tipoSolicitud) {
-      case 'alta':
+      case 'altaF':
         this.router.navigate(['uniconomica']);
         break;
-      case 'modificarRFC':
-        // Agrega lógica específica para la modalidad modificarRFC
+      case 'altaM':
+        this.router.navigate(['uniconomicamoral']);
         break;
       case 'modificarEmail':
-        // Agrega lógica específica para la modalidad modificarEmail
+
         break;
       case 'modificarColaboradores':
-        // Agrega lógica específica para la modalidad modificarColaboradores
+
         break;
       case 'modificarDireccion':
-        // Agrega lógica específica para la modalidad modificarDireccion
+
         break;
       default:
-        // Manejar caso por defecto si es necesario
+
         break;
     }
     this.dialogRef.close();

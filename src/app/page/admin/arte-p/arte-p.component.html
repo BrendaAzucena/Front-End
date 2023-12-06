@@ -18,6 +18,10 @@
                   <tr *ngFor="let pesca of data ; let iControl = index">
                      <td>{{pesca.id}}</td>
                      <td>{{pesca.NombreArtePesca}}</td>
+                     <td>
+                        <a type="button"><i class="bi bi-pen"></i></a>
+                        <a type="button" (click)="borrar(pesca.id, iControl)"><i class="bi bi-trash" style="margin-left: 6%;"></i></a>
+                    </td>
                   </tr>
                </table>
             </div>

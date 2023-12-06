@@ -13,8 +13,6 @@ import { EditOficinaComponent } from '../edit-oficina/edit-oficina.component';
   styleUrls: ['./oficinas.component.css']
 })
 export class OficinasComponent implements OnInit {
-
-  
   data:  any[]=[];
   FormUni:FormGroup;
   

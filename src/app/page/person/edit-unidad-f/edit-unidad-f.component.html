@@ -39,10 +39,11 @@
                     <div class="form-group">
                         <label class="control-label textoInput">OFICINA:</label>
                         <select class="form-select" id="" name="Ofcid" formControlName="Ofcid" [(ngModel)]="datosUnidadF.Ofcid">
-                            <option *ngFor="let oficina of oficinas" [value]="oficina.id" >
-                                {{ oficina.NombreOficina }}
+                            <option *ngFor="let oficina of oficinas" [value]="oficina.id" [selected]="oficina.id === datosUnidadF.Ofcid">
+                               {{ oficina.NombreOficina }}
                             </option>
-                        </select>
+                         </select>
+                         
                     </div>
                     
                     

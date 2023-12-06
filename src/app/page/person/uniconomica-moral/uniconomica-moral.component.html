@@ -8,7 +8,7 @@
       <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
       <p style="font-family: 'Montserrat';font-size: 22px; ">Unidad Economica</p>
       <i class="bi bi-chevron-right" style="font-size: 22px;"></i>
-      <p style="font-family: 'Montserrat';font-size: 22px; ">Persona Fisica</p>
+      <p style="font-family: 'Montserrat';font-size: 22px; ">Persona Moral</p>
 
    </div>
    <a href="#" style="font-family: 'Montserrat';font-size: 22px; color:blue; margin-right:15px;">Manual de usuario</a>
@@ -34,8 +34,9 @@
 
    <div class="borderso text-center"></div>
    <div>
-      <form class="row formularyborder" [formGroup]="FormUni" (submit)="enviar()" ngNativeValidate>
+      <form class="row formularyborder" [formGroup]="FormUniMoral" (submit)="enviar()" ngNativeValidate>
          <div class="row formularyborder">
+
             <div class="col-md-4 marginput ">
                <div class="form-group">
                      <label class="control-label textoInput">OFICINA:</label>
@@ -61,12 +62,20 @@
                   <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                   <label class="control-label textoInput">CAPTURAR RNPA:</label>
                </div>
-               <input class="form-control required" id="" name="" formControlName="RNPA" type="text" required>
+               <input class="form-control required" id="" name="" formControlName="RNPA" type="text" style="text-transform: uppercase;" maxlength="10" required>
                <p class="vacio" id=""></p>
             </div>
 
-
-
+            <div class="col-md-12 marginput">
+                <div class="form-group">
+                      <label class="control-label textoInput">UNIDAD ECONOMICA DUEÑA:</label>
+                      <select class="form-select " id="" name="UEDuenoid" formControlName="UEDuenoid"  #UEDuenoid>
+                        <option *ngFor="let dueno of Dueno" [value]="dueno.id">{{ dueno.Nombres}} {{ dueno.ApPaterno}} {{ dueno.ApMaterno}}</option>
+                     </select>
+                  </div>
+ 
+                   <p class="vacio" id=""></p>
+                </div>
 
             <div>
                <p style=" font-family: 'Montserrat'; font-size: 35px; margin-top:35px; color:rgb(87, 86, 85)">
@@ -79,89 +88,28 @@
 
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">CORREO ELECTRONICO:</label>
-                  <input class="form-control required" id="" name="" formControlName="Email" type="text" required>
+                  <label class="control-label textoInput">RAZÓN SOCIAL:</label>
+                  <input class="form-control required" id="" name="" formControlName="RazonSocial" type="text" style="text-transform: uppercase;" required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
 
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">CURP:</label>
-                  <input formControlName="CURP" type="text" required
-                     onkeypress="return (event.charCode >= 48 && event.charCode <= 57) ||  ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))"
-                     class="form-control required" style="text-transform: uppercase;">
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
 
             <div class="col-md-4 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">RFC:</label>
-                  <input class="form-control required" id="" name="" formControlName="RFC" type="text" required>
+                  <input class="form-control required" id="" name="" formControlName="RFC" type="text" style="text-transform: uppercase;" maxlength="13" required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
 
             <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">NOMBRES(S):</label>
-                  <input class="form-control required" id="" name="" formControlName="Nombres" type="text" required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">APELLIDO PATERNO:</label>
-                  <input class="form-control required" id="" name="" formControlName="ApPaterno" type="text" required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">APELLIDO MATERNO:</label>
-                  <input class="form-control required" id="" name="" formControlName="ApMaterno" type="text" required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">FECHA DE NACIMIENTO:</label>
-                  <input class="form-control required" id="" name="" formControlName="FechaNacimiento" type="date"
-                     required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">SEXO:</label>
-                  <select class="form-select required" id="" name="" formControlName="Sexo" required>
-                     <option selected>Selecciona una opción</option>
-                     <option value="F">F</option>
-                     <option value="M">M</option>
-                  </select>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">GRUPO SANGUINEO:</label>
-                  <input class="form-control required" id="" name="" formControlName="GrupoSanguineo" type="text"
-                     required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-         </div>
-
-
-
-
+                <div class="form-group">
+                   <label class="control-label textoInput">CORREO ELECTRONICO:</label>
+                   <input class="form-control required" id="" name="" formControlName="Email" type="text" required>
+                   <p class="vacio" id=""></p>
+                </div>
+             </div>
 
          <div class="textosolicitud formularyborder " style=" font-family: 'Montserrat'; margin-top:30px;">
 
@@ -185,14 +133,14 @@
             <div class="col-md-12 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">CALLE:</label>
-                  <input class="form-control required" id="" name="" formControlName="Calle" type="text" required>
+                  <input class="form-control required" id="" name="" formControlName="Calle" type="text" style="text-transform: uppercase;" required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
             <div class="col-md-4 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">NUMERO EXTERIOR<span id="">*</span>:</label>
-                  <input class="form-control required" id="" Name="" formControlName="NmExterior" type="text" required>
+                  <input class="form-control required" id="" Name="" formControlName="NmExterior" type="text" maxlength="6" required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
@@ -201,18 +149,16 @@
             <div class="col-md-4 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">NUMERO INTERIOR<span id="">*</span>:</label>
-                  <input class="form-control required" id="" name="" formControlName="NmInterior" type="text" required>
+                  <input class="form-control required" id="" name="" formControlName="NmInterior" type="text" maxlength="6" required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
 
 
-
-
             <div class="col-md-4 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">CODIGO POSTAL<span id="">*</span>:</label>
-                  <input class="form-control required" id="" name="" formControlName="CodigoPostal" type="text"
+                  <input class="form-control required" id="" name="" formControlName="CodigoPostal" type="text" maxlength="10" 
                      required>
                   <p class="vacio" id=""></p>
                </div>
@@ -231,7 +177,7 @@
                <div class="col-md-4 marginput">
                   <div class="form-group">
                      <label class="control-label textoInput">TELEFONO PRINCIPAL<span id="">*</span>:</label>
-                     <input class="form-control required" id="" name="NmPrincipal" formControlName="NmPrincipal" type="text">
+                     <input class="form-control required" id="" name="NmPrincipal" formControlName="NmPrincipal" type="text" maxlength="10" >
                      <p class="vacio" id=""></p>
                   </div>
                </div>
@@ -252,7 +198,7 @@
                <div class="col-md-4 marginput">
                   <div class="form-group">
                      <label class="control-label textoInput">TELEFONO SECUNDARIO<span id="">*</span>:</label>
-                     <input class="form-control required" id="" name="NmSecundario" formControlName="NmSecundario" type="text">
+                     <input class="form-control required" id="" name="NmSecundario" formControlName="NmSecundario" type="text" maxlength="10" >
                      <p class="vacio" id=""></p>
                   </div>
                </div>
@@ -335,7 +281,6 @@
          <div class="row">
 
 
-
             <div class="col-md-4 marginput">
                <div class="form-group">
                   <label class="control-label textoInput">FECHA DE OPERACIONES</label>
@@ -346,14 +291,17 @@
             </div>
 
             <div>
-               <label class="control-label textoInput">ACTIVIDAD PESQUERA:</label>
-               <div class="form-check">
+                <p class="control-label textoInput">ACTIVIDAD PESQUERA:<p>
+             </div>
+
+            <div>
+               <div class="form-check form-check-inline col-md-4">
                   <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActvAcuacultura" >
                   <label class="form-check-label" for="ActvAcuacultura">
                      ACTIVIDAD ACUACULTURA
                   </label>
                </div>
-               <div class="form-check">
+               <div class="form-check form-check-inline col-md-4">
                   <input class="form-check-input" type="checkbox" id="ActvPesca" formControlName="ActvPesca">
                   <label class="form-check-label" for="ActvPesca">
                      ACTIVIDAD PESQUERA
@@ -364,8 +312,8 @@
             <!--PRUEBA-->
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">DocActaNacimiento</label>
-                  <input class="form-control required input" id="" name="" formControlName="DocActaNacimiento"
+                  <label class="control-label textoInput">DocRepresentanteLegal</label>
+                  <input class="form-control required input" id="" name="" formControlName="DocRepresentanteLegal"
                      type="text" required>
                   <p class="vacio" id=""></p>
                </div>
@@ -373,8 +321,8 @@
 
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">DocComprobanteDomicilio</label>
-                  <input class="form-control required input" id="" name="" formControlName="DocComprobanteDomicilio"
+                  <label class="control-label textoInput">DocActaConstitutiva</label>
+                  <input class="form-control required input" id="" name="" formControlName="DocActaConstitutiva"
                      type="text" required>
                   <p class="vacio" id=""></p>
                </div>
@@ -382,42 +330,26 @@
 
             <div class="col-md-4 marginput">
                <div class="form-group">
-                  <label class="control-label textoInput">DocCURP</label>
-                  <input class="form-control required input" id="" name="" formControlName="DocCURP" type="text"
-                     required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">DocIdentificacionOfc</label>
-                  <input class="form-control required input" id="" name="" formControlName="DocIdentificacionOfc"
+                  <label class="control-label textoInput">DocActaAsamblea</label>
+                  <input class="form-control required input" id="" name="" formControlName="DocActaAsamblea"
                      type="text" required>
-                  <p class="vacio" id=""></p>
-               </div>
-            </div>
-
-            <div class="col-md-4 marginput">
-               <div class="form-group">
-                  <label class="control-label textoInput">DocRFC</label>
-                  <input class="form-control required input" id="" name="" formControlName="DocRFC" type="text"
-                     required>
                   <p class="vacio" id=""></p>
                </div>
             </div>
             <!--FIN PRUEBA-->
 
+            <div>
+                <p class="control-label textoInput">ACTIVOS:<p>
+             </div>
 
             <div>
-               <label class="control-label textoInput">ACTIVOS:</label>
-               <div class="form-check">
+               <div class="form-check form-check-inline col-md-4">
                   <input class="form-check-input" type="checkbox" id="activoEmbMayor" formControlName="ActivoEmbMayor">
                   <label class="form-check-label" for="activoEmbMayor">
                      EMBARCACIONES MAYORES
                   </label>
                </div>
-               <div class="form-check">
+               <div class="form-check form-check-inline col-md-7">
                   <input class="form-check-input" type="checkbox" id="activoEmbMenor" formControlName="ActivoEmbMenor">
                   <label class="form-check-label" for="activoEmbMenor">
                      EMBARCACIONES MENORES
@@ -425,7 +357,7 @@
                </div>
             </div>
          </div>
-
+        </div>
          <button class="btn botones"
             style="background-color: brown; color:white; width: 10%; height: 38%; margin-left: 5%;">Guardar</button>
       </form>

@@ -17,6 +17,7 @@ import { EditUnidadFComponent } from './page/person/edit-unidad-f/edit-unidad-f.
 import { ArtePComponent } from './page/admin/arte-p/arte-p.component';
 import { EspeciesComponent } from './page/admin/especies/especies.component';
 import { ProductosComponent } from './page/admin/productos/productos.component';
+import { UniconomicaMoralComponent } from './page/person/uniconomica-moral/uniconomica-moral.component';
 
 
 LoginComponent
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path:'uniconomica',
     component:UniconomicaComponent
+  },
+  {
+    path:'uniconomicamoral',
+    component:UniconomicaMoralComponent
   },
   {
     path:'uniconomicaF/:id',

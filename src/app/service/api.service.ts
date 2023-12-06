@@ -9,6 +9,7 @@ import { UnidadEconomicaPA } from '../interfaces/unidadE';
 import { artePesca } from '../interfaces/artePesca';
 import { especies } from '../interfaces/especies';
 import { productos } from '../interfaces/productos';
+import { unidadMoral } from '../interfaces/unidadMoral';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class ApiService {
   getIdUnidadF(id:any):Observable<UnidadEconomicaPA>{
     return this.http.get<UnidadEconomicaPA>(this.path+'/'+id);  
   }
+//Datos generalesPaMoral
+  agreMoral(moral: unidadMoral):Observable<unidadMoral>{
+    let direccion = "http://localhost:8000/api/unidades_economicas_pa_moral";
+    return this.http.post<unidadMoral>(direccion, moral)
+  }
   //Arte_Pesca 
   agreArt(pesca: artePesca):Observable<artePesca>{
     let direccion = "http://localhost:8000/api/artes_pesca";
@@ -55,7 +61,11 @@ export class ApiService {
   getArt(){
     return this.http.get('http://localhost:8000/api/artes_pesca');
   } 
-  
+
+  delete(id:any): Observable<any>{
+    let direccion = "http://localhost:8000/api/artes_pesca";
+    return this.http.delete<any>(direccion+'/'+id);
+  }
   //Especies 
   agreEsp(especie: especies):Observable<especies>{
     let direccion = "http://localhost:8000/api/especies";

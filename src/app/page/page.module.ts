@@ -19,6 +19,7 @@ import { EditUnidadFComponent } from './person/edit-unidad-f/edit-unidad-f.compo
 import { ArtePComponent } from './admin/arte-p/arte-p.component';
 import { EspeciesComponent } from './admin/especies/especies.component';
 import { ProductosComponent } from './admin/productos/productos.component';
+import { UniconomicaMoralComponent } from './person/uniconomica-moral/uniconomica-moral.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ProductosComponent } from './admin/productos/productos.component';
     ArtePComponent,
     EspeciesComponent,
     ProductosComponent,
+    UniconomicaMoralComponent,
    
   ],
   imports: [

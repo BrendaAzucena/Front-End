@@ -15,7 +15,7 @@ export class EditUnidadFComponent implements OnInit {
   idUnidad: any;
   oficinas: any[] = [];
   localidades: any[] = [];
-
+  id: any;
   @Input() datosUnidadF: UnidadEconomicaPA = {
     id: '', FechaRegistro: '', Ofcid: '', RNPA: '', RFC: '', CURP: '', Nombres: '', ApPaterno: '',
     ApMaterno: '', FechaNacimiento: '', Sexo: '', GrupoSanguineo: '', Email: '', Calle: '', NmExterior: '', NmInterior: '', CodigoPostal: '',
@@ -120,7 +120,13 @@ export class EditUnidadFComponent implements OnInit {
     this.api.getOfi().subscribe((response: any) => {
       this.oficinas = response.data;
       console.log('Oficinas:', this.oficinas);
-    });
+      
+      // Asigna el valor después de cargar las oficinas
+      this.datosUnidadF.Ofcid = this.id; // Reemplaza valorCorrecto con el valor adecuado
+      console.log('Valor de datosUnidadF.Ofcid:', this.datosUnidadF.Ofcid);
+
+   });
+   
   }
 
   cancelar() {

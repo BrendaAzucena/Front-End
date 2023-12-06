@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -12,7 +14,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class ArtePComponent implements OnInit {
   FormArte:FormGroup;
   data:  any[]=[];
-  constructor(private snackBar: MatSnackBar, private api:ApiService,private router:Router, public formulario:FormBuilder){ 
+  constructor(private dialog: MatDialog, private snackBar: MatSnackBar, private api:ApiService,private router:Router, public formulario:FormBuilder){ 
   this.FormArte=this.formulario.group({
     NombreArtePesca: [''],
      });
@@ -56,4 +58,41 @@ mostrarSnackBar(mensaje: string, clase: string): void {
 cancelar() {
   this.router.navigateByUrl('panel');
 }
+
+borrar(id: any, iControl: any) {
+  const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+    data: { title: 'Confirmación', message: ' ¿Estás seguro de que deseas eliminar este dato?' },
+    disableClose: true,
+  });
+
+  dialogRef.afterClosed().subscribe((result) => {
+    if (result) {
+      this.api.delete(id).subscribe(
+        () => {
+          this.data.splice(iControl, 1);
+          this.mostrarMensajeExitoso(' DATO ELIMINADO EXITOSAMENTE');
+        },
+        (error) => {
+          this.mostrarMensajeError(' ERROR AL ELIMINAR EL DATO. POR FAVOR, INTÉNTALO DE NUEVO');
+        }
+      );
+    } else {
+      console.log('Eliminación cancelada.');
+    }
+  });
+}
+mostrarMensajeExitoso(mensaje: string): void {
+  this.snackBar.open(mensaje, '', {
+    duration: 3000,
+    panelClass: ['success-snackbar'], 
+  });
+}
+
+mostrarMensajeError(mensaje: string): void {
+  this.snackBar.open(mensaje, '', {
+    duration: 3000, 
+    panelClass: ['error-snackbar'], 
+  });
+}
+
 }
