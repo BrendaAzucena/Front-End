@@ -10,108 +10,118 @@ import { artePesca } from '../interfaces/artePesca';
 import { especies } from '../interfaces/especies';
 import { productos } from '../interfaces/productos';
 import { unidadMoral } from '../interfaces/unidadMoral';
+import { socios } from '../interfaces/socios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
- 
+
 
   path = `${environment.API_URL}unidades_economicas_pa_fisico`;
 
   constructor(private http: HttpClient) { }
 
-  getUni(){
+  getUni() {
     return this.http.get(this.path);
   }
 
 
   //Datos generalesPaFissica
-  agreDa(dat: Datosge): Observable<Datosge>{
+  agreDa(dat: Datosge): Observable<Datosge> {
     return this.http.post<Datosge>(`${this.path}`, dat)
   }
-  
-  gettUnidad(UEPAid:any):Observable<UnidadEconomicaPA>{
-    return this.http.get<UnidadEconomicaPA>(this.path+'/'+UEPAid);  
+
+  gettUnidad(UEPAid: any): Observable<UnidadEconomicaPA> {
+    return this.http.get<UnidadEconomicaPA>(this.path + '/' + UEPAid);
   }
 
-  agreUni(uni: UnidadEconomicaPA):Observable<UnidadEconomicaPA>{
+  agreUni(uni: UnidadEconomicaPA): Observable<UnidadEconomicaPA> {
     let direccion = "http://localhost:8000/api/unidades_economicas_pa_fisico";
     return this.http.post<UnidadEconomicaPA>(direccion, uni)
   }
 
-  editUnidadF(id: any ,put:  UnidadEconomicaPA):Observable<UnidadEconomicaPA>{
-    let direccion = this.path+"/"+ id;
+  editUnidadF(id: any, put: UnidadEconomicaPA): Observable<UnidadEconomicaPA> {
+    let direccion = this.path + "/" + id;
     return this.http.put<UnidadEconomicaPA>(direccion, put)
   }
 
-  getIdUnidadF(id:any):Observable<UnidadEconomicaPA>{
-    return this.http.get<UnidadEconomicaPA>(this.path+'/'+id);  
+  getIdUnidadF(id: any): Observable<UnidadEconomicaPA> {
+    return this.http.get<UnidadEconomicaPA>(this.path + '/' + id);
   }
-//Datos generalesPaMoral
-  agreMoral(moral: unidadMoral):Observable<unidadMoral>{
+  //Datos generalesPaMoral
+  getMoral() {
+    return this.http.get('http://localhost:8000/api/unidades_economicas_pa_moral');
+  }
+
+  agreMoral(moral: unidadMoral): Observable<unidadMoral> {
     let direccion = "http://localhost:8000/api/unidades_economicas_pa_moral";
     return this.http.post<unidadMoral>(direccion, moral)
   }
+  //Socio Moral
+  agreSocio(socio: socios): Observable<socios> {
+    let direccion = "http://localhost:8000/api/socios_detalles_pa_moral";
+    return this.http.post<socios>(direccion, socio)
+  }
   //Arte_Pesca 
-  agreArt(pesca: artePesca):Observable<artePesca>{
+  agreArt(pesca: artePesca): Observable<artePesca> {
     let direccion = "http://localhost:8000/api/artes_pesca";
     return this.http.post<artePesca>(direccion, pesca)
-  } 
-  getArt(){
+  }
+  getArt() {
     return this.http.get('http://localhost:8000/api/artes_pesca');
-  } 
+  }
 
-  delete(id:any): Observable<any>{
+  delete(id: any): Observable<any> {
     let direccion = "http://localhost:8000/api/artes_pesca";
-    return this.http.delete<any>(direccion+'/'+id);
+    return this.http.delete<any>(direccion + '/' + id);
   }
   //Especies 
-  agreEsp(especie: especies):Observable<especies>{
+  agreEsp(especie: especies): Observable<especies> {
     let direccion = "http://localhost:8000/api/especies";
     return this.http.post<especies>(direccion, especie)
-  } 
+  }
 
-  getEspecie(){
+  getEspecie() {
     return this.http.get('http://localhost:8000/api/especies');
   }
   //Productos
-  agreProduc(producto: productos ):Observable<productos>{
+  agreProduc(producto: productos): Observable<productos> {
     let direccion = "http://localhost:8000/api/productos";
     return this.http.post<productos>(direccion, producto)
-  } 
-  getProd(){
+  }
+  getProd() {
     return this.http.get('http://localhost:8000/api/productos');
-  } 
+  }
   //localidad
-  getLoc(){
+  getLoc() {
     return this.http.get('http://localhost:8000/api/localidades');
   }
   //Municipio
-  getMuni(){
+  getMuni() {
     return this.http.get('http://localhost:8000/api/municipios');
   }
 
-  getOfi(){
+  getOfi() {
     return this.http.get('http://localhost:8000/api/oficinas');
   }
- 
-  agreOfi(ofi: Oficina):Observable<Oficina>{
+
+  agreOfi(ofi: Oficina): Observable<Oficina> {
     let direccion = "http://localhost:8000/api/oficinas";
     return this.http.post<Oficina>(direccion, ofi)
   }
 
-  getId(id:any):Observable<Oficina>{
-    return this.http.get<Oficina>(this.path+'/'+id);  
+  getId(id: any): Observable<Oficina> {
+    return this.http.get<Oficina>(this.path + '/' + id);
   }
 
- 
-  editOfi(id: any ,put:  Oficina):Observable<Oficina>{
-    let direccion = this.path+"/"+ id;
+
+  editOfi(id: any, put: Oficina): Observable<Oficina> {
+    let direccion = this.path + "/" + id;
     return this.http.put<Oficina>(direccion, put)
   }
 
-  eliminar(id:any): Observable<any>{
+  eliminar(id: any): Observable<any> {
     return this.http.delete<any>(`${this.path}/${id}`);
   }
 

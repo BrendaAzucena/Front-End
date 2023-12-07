@@ -20,6 +20,7 @@ import { ArtePComponent } from './admin/arte-p/arte-p.component';
 import { EspeciesComponent } from './admin/especies/especies.component';
 import { ProductosComponent } from './admin/productos/productos.component';
 import { UniconomicaMoralComponent } from './person/uniconomica-moral/uniconomica-moral.component';
+import { SocioComponent } from './person/socio/socio.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { UniconomicaMoralComponent } from './person/uniconomica-moral/uniconomic
     EspeciesComponent,
     ProductosComponent,
     UniconomicaMoralComponent,
+    SocioComponent,
    
   ],
   imports: [

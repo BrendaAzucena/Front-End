@@ -19,6 +19,7 @@ export interface unidadMoral {
   IniOperaciones: string;
   ActivoEmbMayor: string;
   ActivoEmbMenor: string;
+  CantidadPescadores: string;
   ActvAcuacultura: string;
   ActvPesca: string;
   DocRepresentanteLegal: string;

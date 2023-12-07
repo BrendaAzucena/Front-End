@@ -36,6 +36,7 @@ export class UniconomicaMoralComponent implements OnInit {
   ActivoEmbMayor: [false],
   ActivoEmbMenor: [false],
   ActvAcuacultura: [false],
+  CantidadPescadores: [''],
   ActvPesca: [false],
   DocRepresentanteLegal: [''],
   DocActaConstitutiva: [''],
@@ -77,16 +78,22 @@ export class UniconomicaMoralComponent implements OnInit {
   }
 
 
-enviar(): any {
-  console.log(this.FormUniMoral.value);
-  this.api.agreMoral(this.FormUniMoral.value).subscribe(() => {
-    this.router.navigateByUrl('solicitud', { skipLocationChange: false }).then(() => {
-      this.router.navigate(['solicitud']);
-      this.mostrarSnackBar('SE AGREGO CON ÉXITO', 'success-snackbar');
-    });
-  });
-}
-
+  enviar(): any {
+    console.log(this.FormUniMoral.value);
+    const cantidadPescadores = this.FormUniMoral.get('CantidadPescadores').value;
+  
+    if (cantidadPescadores >= 1) {
+      this.router.navigateByUrl('socios');
+    } else {
+      this.api.agreMoral(this.FormUniMoral.value).subscribe(() => {
+        this.router.navigateByUrl('solicitud', { skipLocationChange: false }).then(() => {
+          this.router.navigate(['solicitud']);
+          this.mostrarSnackBar('SE AGREGO CON ÉXITO', 'success-snackbar');
+        });
+      });
+    }
+  }
+  
 mostrarSnackBar(mensaje: string, clase: string): void {
   this.snackBar.open(mensaje, '', {
     duration: 3000,

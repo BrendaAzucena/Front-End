@@ -18,6 +18,7 @@ import { ArtePComponent } from './page/admin/arte-p/arte-p.component';
 import { EspeciesComponent } from './page/admin/especies/especies.component';
 import { ProductosComponent } from './page/admin/productos/productos.component';
 import { UniconomicaMoralComponent } from './page/person/uniconomica-moral/uniconomica-moral.component';
+import { SocioComponent } from './page/person/socio/socio.component';
 
 
 LoginComponent
@@ -96,7 +97,10 @@ const routes: Routes = [
     path:'productos',
     component:ProductosComponent
   },
-
+  {
+    path:'socios',
+    component:SocioComponent
+  },
 ];
 
 @NgModule({
