@@ -16,7 +16,7 @@ export class UniconomicaComponent implements OnInit {
   FormUni:FormGroup;
   constructor(private snackBar: MatSnackBar, private api:ApiService,private router:Router, public formulario:FormBuilder){ 
   this.FormUni=this.formulario.group({
-    FechaRegistro: [''],
+    FechaRegistro:[this.obtenerFechaActual()],
     Ofcid: [''],
     RNPA: [''],
     RFC: [''],
@@ -76,6 +76,11 @@ getMunicipios(): void {
     this.municipios = response.data;
     console.log('Municipios:', this.municipios);
   });
+}
+
+obtenerFechaActual(): string {
+  const fechaActual = new Date();
+  return fechaActual.toISOString().substring(0, 10);
 }
 
 enviar(): any {

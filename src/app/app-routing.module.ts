@@ -98,7 +98,7 @@ const routes: Routes = [
     component:ProductosComponent
   },
   {
-    path:'socios',
+    path:'socios/:id',
     component:SocioComponent
   },
 ];

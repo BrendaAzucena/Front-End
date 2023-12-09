@@ -13,38 +13,38 @@ export class UniconomicaMoralComponent implements OnInit {
   localidades: any[] = [];
   Dueno: any[] = [];
   oficinas: any[] = [];
-  FormUniMoral:FormGroup;
-  constructor(private snackBar: MatSnackBar, private api:ApiService,private router:Router, public formulario:FormBuilder){ 
-  this.FormUniMoral=this.formulario.group({
-  UEDuenoid: [''],
-  Ofcid: [''],
-  FechaRegistro: [this.obtenerFechaActual()],
-  RNPA: [''],
-  RFC: [''],
-  RazonSocial: [''],
-  Email: [''],
-  Calle: [''],
-  NmExterior: [''],
-  NmInterior: [''],
-  CodigoPostal: [''],
-  Locid: [''],
-  NmPrincipal: [''],
-  TpNmPrincipal: [''],
-  NmSecundario: [''],
-  TpNmSecundario: [''],
-  IniOperaciones: [''],
-  ActivoEmbMayor: [false],
-  ActivoEmbMenor: [false],
-  ActvAcuacultura: [false],
-  CantidadPescadores: [''],
-  ActvPesca: [false],
-  DocRepresentanteLegal: [''],
-  DocActaConstitutiva: [''],
-  DocActaAsamblea: [''],
-     });
-     console.log(this.FormUniMoral);
-}
-  
+  FormUniMoral: FormGroup;
+  constructor(private snackBar: MatSnackBar, private api: ApiService, private router: Router, public formulario: FormBuilder) {
+    this.FormUniMoral = this.formulario.group({
+      UEDuenoid: [''],
+      Ofcid: [''],
+      FechaRegistro: [this.obtenerFechaActual()],
+      RNPA: [''],
+      RFC: [''],
+      RazonSocial: [''],
+      Email: [''],
+      Calle: [''],
+      NmExterior: [''],
+      NmInterior: [''],
+      CodigoPostal: [''],
+      Locid: [''],
+      NmPrincipal: [''],
+      TpNmPrincipal: [''],
+      NmSecundario: [''],
+      TpNmSecundario: [''],
+      IniOperaciones: [''],
+      ActivoEmbMayor: [false],
+      ActivoEmbMenor: [false],
+      ActvAcuacultura: [false],
+      CantidadPescadores: [''],
+      ActvPesca: [false],
+      DocRepresentanteLegal: [''],
+      DocActaConstitutiva: [''],
+      DocActaAsamblea: [''],
+    });
+    console.log(this.FormUniMoral);
+  }
+
   ngOnInit(): void {
     this.getLocalidades();
     this.getOficinas();
@@ -53,7 +53,7 @@ export class UniconomicaMoralComponent implements OnInit {
 
   obtenerFechaActual(): string {
     const fechaActual = new Date();
-    return fechaActual.toISOString().substring(0, 10); 
+    return fechaActual.toISOString().substring(0, 10);
   }
 
   getUEDuenoid(): void {
@@ -81,9 +81,9 @@ export class UniconomicaMoralComponent implements OnInit {
   enviar(): any {
     console.log(this.FormUniMoral.value);
     const cantidadPescadores = this.FormUniMoral.get('CantidadPescadores').value;
-  
+
     if (cantidadPescadores >= 1) {
-      this.router.navigateByUrl('socios');
+      this.router.navigate(['socios', cantidadPescadores]);
     } else {
       this.api.agreMoral(this.FormUniMoral.value).subscribe(() => {
         this.router.navigateByUrl('solicitud', { skipLocationChange: false }).then(() => {
@@ -93,15 +93,17 @@ export class UniconomicaMoralComponent implements OnInit {
       });
     }
   }
-  
-mostrarSnackBar(mensaje: string, clase: string): void {
-  this.snackBar.open(mensaje, '', {
-    duration: 3000,
-    horizontalPosition: 'center',
-    verticalPosition: 'top',
-    panelClass: [clase],
-  });
-}
+
+
+
+  mostrarSnackBar(mensaje: string, clase: string): void {
+    this.snackBar.open(mensaje, '', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: [clase],
+    });
+  }
 
 }
 
