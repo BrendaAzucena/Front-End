@@ -120,9 +120,7 @@ export class EditUnidadFComponent implements OnInit {
     this.api.getOfi().subscribe((response: any) => {
       this.oficinas = response.data;
       console.log('Oficinas:', this.oficinas);
-      
-      // Asigna el valor después de cargar las oficinas
-      this.datosUnidadF.Ofcid = this.id; // Reemplaza valorCorrecto con el valor adecuado
+      this.datosUnidadF.Ofcid = this.id; 
       console.log('Valor de datosUnidadF.Ofcid:', this.datosUnidadF.Ofcid);
 
    });

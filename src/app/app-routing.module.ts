@@ -19,6 +19,7 @@ import { EspeciesComponent } from './page/admin/especies/especies.component';
 import { ProductosComponent } from './page/admin/productos/productos.component';
 import { UniconomicaMoralComponent } from './page/person/uniconomica-moral/uniconomica-moral.component';
 import { SocioComponent } from './page/person/socio/socio.component';
+import { EditUniMoralComponent } from './page/person/edit-uni-moral/edit-uni-moral.component';
 
 
 LoginComponent
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path:'uniconomicamoral',
     component:UniconomicaMoralComponent
+  },
+  {
+    path:'uniconomicaM/:id',
+    component:EditUniMoralComponent
   },
   {
     path:'uniconomicaF/:id',
