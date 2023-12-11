@@ -21,6 +21,7 @@ import { EspeciesComponent } from './admin/especies/especies.component';
 import { ProductosComponent } from './admin/productos/productos.component';
 import { UniconomicaMoralComponent } from './person/uniconomica-moral/uniconomica-moral.component';
 import { SocioComponent } from './person/socio/socio.component';
+import { EditUniMoralComponent } from './person/edit-uni-moral/edit-uni-moral.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SocioComponent } from './person/socio/socio.component';
     ProductosComponent,
     UniconomicaMoralComponent,
     SocioComponent,
+    EditUniMoralComponent,
    
   ],
   imports: [
