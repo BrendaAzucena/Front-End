@@ -42,21 +42,30 @@ export class ApiService {
   }
 
   editUnidadF(id: any, put: UnidadEconomicaPA): Observable<UnidadEconomicaPA> {
-    let direccion = this.path + "/" + id;
+    let direccion = "http://localhost:8000/api/unidades_economicas_pa_fisico" + "/" + id;
     return this.http.put<UnidadEconomicaPA>(direccion, put)
   }
 
   getIdUnidadF(id: any): Observable<UnidadEconomicaPA> {
-    return this.http.get<UnidadEconomicaPA>(this.path + '/' + id);
+    return this.http.get<UnidadEconomicaPA>('http://localhost:8000/api/unidades_economicas_pa_fisico' + '/' + id);
   }
   //Datos generalesPaMoral
   getMoral() {
     return this.http.get('http://localhost:8000/api/unidades_economicas_pa_moral');
   }
 
+  getIdUnidadM(id: any): Observable<unidadMoral> {
+    return this.http.get<unidadMoral>('http://localhost:8000/api/unidades_economicas_pa_moral' + '/' + id);
+  }
+
   agreMoral(moral: unidadMoral): Observable<unidadMoral> {
     let direccion = "http://localhost:8000/api/unidades_economicas_pa_moral";
     return this.http.post<unidadMoral>(direccion, moral)
+  }
+
+  editUnidadM(id: any, put: unidadMoral): Observable<unidadMoral> {
+    let direccion = "http://localhost:8000/api/unidades_economicas_pa_moral" + "/" + id;
+    return this.http.put<unidadMoral>(direccion, put)
   }
   //Socio Moral
   agreSocio(socio: socios): Observable<socios> {

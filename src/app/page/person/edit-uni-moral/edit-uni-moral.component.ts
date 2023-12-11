@@ -23,7 +23,7 @@ export class EditUniMoralComponent implements OnInit {
   };
   constructor(private snackBar: MatSnackBar, public formulario: FormBuilder, private api: ApiService, private router: Router, private activate: ActivatedRoute) {
     this.idUnidad = this.activate.snapshot.paramMap.get('id');
-    this.api.getIdUnidadF(this.idUnidad).subscribe(datosUnidadM => {
+    this.api.getIdUnidadM(this.idUnidad).subscribe(datosUnidadM => {
       console.log(datosUnidadM);
       this.FormUniMoral.setValue({
         id: datosUnidadM[0]['id'],
@@ -87,23 +87,17 @@ export class EditUniMoralComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.showUnidadF();
-    this.getOficinas();
+    this.showUnidadM();
     this.getLocalidades();
-
+    this.getOficinas();
+    this.getUEDuenoid();
   }
-  showUnidadF() {
-    this.api.getIdUnidadF(this.activate.snapshot.params['id']).subscribe((response: any) => {
+
+  showUnidadM() {
+    this.api.getIdUnidadM(this.activate.snapshot.params['id']).subscribe((response: any) => {
 
       this.datosUnidadM = response.data;
       console.log(response);
-    });
-  }
-
- getLocalidades(): void {
-    this.api.getLoc().subscribe((response: any) => {
-      this.localidades = response.data;
-      console.log('Localidades:', this.localidades);
     });
   }
 
@@ -111,13 +105,23 @@ export class EditUniMoralComponent implements OnInit {
     this.api.getOfi().subscribe((response: any) => {
       this.oficinas = response.data;
       console.log('Oficinas:', this.oficinas);
-      
-      this.datosUnidadM.Ofcid = this.id; 
-      console.log('Valor de datosUnidadM.Ofcid:', this.datosUnidadM.Ofcid);
-
-   });
-   
+    });
   }
+
+  getUEDuenoid(): void {
+    this.api.getUni().subscribe((response: any) => {
+      this.Dueno = response.data;
+      console.log('UEDuenoid:', this.Dueno);
+    });
+  }
+
+  getLocalidades(): void {
+    this.api.getLoc().subscribe((response: any) => {
+      this.localidades = response.data;
+      console.log('Localidades:', this.localidades);
+    });
+  }
+
 
   cancelar() {
     this.router.navigateByUrl('solicitud');
@@ -125,7 +129,7 @@ export class EditUniMoralComponent implements OnInit {
 
   put() {
     console.log(this.FormUniMoral);
-    this.api.editOfi(this.idUnidad, this.FormUniMoral.value).subscribe(
+    this.api.editUnidadM(this.idUnidad, this.FormUniMoral.value).subscribe(
       () => {
         this.router.navigateByUrl('solicitud');
         this.mostrarAlerta(' EDICIÓN EXITOSA', 'success');

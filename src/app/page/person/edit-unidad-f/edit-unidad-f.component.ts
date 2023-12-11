@@ -133,7 +133,7 @@ export class EditUnidadFComponent implements OnInit {
 
   put() {
     console.log(this.formUnid);
-    this.api.editOfi(this.idUnidad, this.formUnid.value).subscribe(
+    this.api.editUnidadF(this.idUnidad, this.formUnid.value).subscribe(
       () => {
         this.router.navigateByUrl('solicitud');
         this.mostrarAlerta(' EDICIÓN EXITOSA', 'success');
