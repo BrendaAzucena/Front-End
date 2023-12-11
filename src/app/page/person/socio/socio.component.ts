@@ -48,7 +48,6 @@ export class SocioComponent implements OnInit {
     }
   }
 
-
   enviar(): void {
     this.forms.forEach(form => {
       console.log(form.value);

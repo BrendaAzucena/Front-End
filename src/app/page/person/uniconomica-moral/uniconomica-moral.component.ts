@@ -78,20 +78,26 @@ export class UniconomicaMoralComponent implements OnInit {
   }
 
 
-  enviar(): any {
+  enviar(): void {
     console.log(this.FormUniMoral.value);
     const cantidadPescadores = this.FormUniMoral.get('CantidadPescadores').value;
 
-    if (cantidadPescadores >= 1) {
-      this.router.navigate(['socios', cantidadPescadores]);
-    } else {
-      this.api.agreMoral(this.FormUniMoral.value).subscribe(() => {
-        this.router.navigateByUrl('solicitud', { skipLocationChange: false }).then(() => {
-          this.router.navigate(['solicitud']);
-          this.mostrarSnackBar('SE AGREGO CON ÉXITO', 'success-snackbar');
-        });
-      });
-    }
+    this.api.agreMoral(this.FormUniMoral.value).subscribe(() => {
+      this.mostrarSnackBar('SE AGREGO CON ÉXITO', 'success-snackbar');
+
+      if (cantidadPescadores >= 1) {
+        this.duplicarCantidadPescadores(cantidadPescadores);
+      } else {
+        this.router.navigate(['solicitud']);
+      }
+    }, error => {
+      console.error('Error al guardar UnidadMoral:', error);
+    });
+  }
+
+  duplicarCantidadPescadores(cantidad: number): void {
+    const nuevaCantidad = cantidad * 1;
+    this.router.navigate(['socios', nuevaCantidad]);
   }
 
 
