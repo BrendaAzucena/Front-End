@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<section class="container">
+<form [formGroup]="formuArte" (ngSubmit)="put()" ngNativeValidate>
+      <div class="form-group">
+        <label for="">Nombre de Arte Pesca:</label>
+        <input type="text"  style="text-transform: uppercase;" required name="" formControlName="NombreArtePesca" [(ngModel)]="datosArte.NombreArtePesca" id="" class="form-control">
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-lg">
+           <div class="d-flex justify-content-end  " style="margin-bottom: 50px;">
+              <button class="btn btn-default "  type="button " height="40px;"
+                 style="background-color: rgb(110, 109, 109); color:white; margin-right: 20px;">Cancelar</button>
+              <button class="btn  " style="background-color: brown; color:white;">Guardar</button>
+
+           </div>
+        </div>
+ </div>
+
+
+  </form>
+</section>
+<app-footer></app-footer>

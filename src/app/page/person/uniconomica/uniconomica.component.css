@@ -7,6 +7,10 @@ input{
     margin-top: 5px;
    
 }
+.mayus{
+    text-transform: uppercase;
+}
+
 .bordeInput{
     margin-top: 30px;
     margin-top: 5px;
@@ -148,5 +152,6 @@ input[type="file"]::file-selector-button {
     border:solid 1px rgb(129, 129, 129);
   }
 td{
-    border:solid 1px rgb(129, 129, 129);
+    border:solid 1px rgb(94, 94, 94);
+   
 }

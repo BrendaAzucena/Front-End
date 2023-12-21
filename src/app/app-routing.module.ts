@@ -10,16 +10,28 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { EmbarcamenorComponent } from './page/person/embarcamenor/embarcamenor.component';
 import { InstalacuicolaComponent } from './page/person/instalacuicola/instalacuicola.component';
 import { PanelComponent } from './page/admin/panel/panel.component';
-import { OficinasComponent } from './page/admin/unidadeconomica/oficinas/oficinas.component';
-import { EditOficinaComponent } from './page/admin/unidadeconomica/edit-oficina/edit-oficina.component';
-import { CrearOficinaComponent } from './page/admin/unidadeconomica/crear-oficina/crear-oficina.component';
-import { EditUnidadFComponent } from './page/person/edit-unidad-f/edit-unidad-f.component';
-import { ArtePComponent } from './page/admin/arte-p/arte-p.component';
-import { EspeciesComponent } from './page/admin/especies/especies.component';
-import { ProductosComponent } from './page/admin/productos/productos.component';
-import { UniconomicaMoralComponent } from './page/person/uniconomica-moral/uniconomica-moral.component';
-import { SocioComponent } from './page/person/socio/socio.component';
-import { EditUniMoralComponent } from './page/person/edit-uni-moral/edit-uni-moral.component';
+import { PermisosComponent } from './page/admin/permisos/permisos.component';
+import { AgregarPermisoComponent } from './page/admin/permisos/agregar-permiso/agregar-permiso.component';
+import { EdituniconomicafisicaComponent } from './page/person/uniconomica/edituniconomicafisica/edituniconomicafisica.component';
+import { EspeciesComponent } from './page/admin/especie/especies/especies.component';
+import { ArteFComponent } from './page/admin/artePesca/arte-f/arte-f.component';
+import { UnidadconofisicasComponent } from './page/person/solicitud/unidadconofisicas/unidadconofisicas.component';
+import { UniconomicamoralComponent } from './page/person/uniconomicamoral/uniconomicamoral.component';
+import { SociosComponent } from './page/person/uniconomicamoral/socios/socios.component';
+import { ProductosComponent } from './page/admin/producto/productos/productos.component';
+import { RegionesComponent } from './page/admin/region/regiones/regiones.component';
+import { DistritosComponent } from './page/admin/distrito/distritos/distritos.component';
+import { MunicipiosComponent } from './page/admin/municipio/municipios/municipios.component';
+import { LocalidadesComponent } from './page/admin/localidad/localidades/localidades.component';
+import { OficinasComponent } from './page/admin/oficina/oficinas/oficinas.component';
+import { EditOficinaComponent } from './page/admin/oficina/edit-oficina/edit-oficina.component';
+import { EditEspecieComponent } from './page/admin/especie/edit-especie/edit-especie.component';
+import { EditArteComponent } from './page/admin/artePesca/edit-arte/edit-arte.component';
+import { EditProductoComponent } from './page/admin/producto/edit-producto/edit-producto.component';
+import { EditRegionComponent } from './page/admin/region/edit-region/edit-region.component';
+import { EditDistritoComponent } from './page/admin/distrito/edit-distrito/edit-distrito.component';
+import { EditMunicipioComponent } from './page/admin/municipio/edit-municipio/edit-municipio.component';
+import { EditLocaildadComponent } from './page/admin/localidad/edit-locaildad/edit-locaildad.component';
 
 
 LoginComponent
@@ -35,18 +47,6 @@ const routes: Routes = [
   {
     path:'uniconomica',
     component:UniconomicaComponent
-  },
-  {
-    path:'uniconomicamoral',
-    component:UniconomicaMoralComponent
-  },
-  {
-    path:'uniconomicaM/:id',
-    component:EditUniMoralComponent
-  },
-  {
-    path:'uniconomicaF/:id',
-    component:EditUnidadFComponent
   },
   {
     path:'loginuser',
@@ -85,27 +85,102 @@ const routes: Routes = [
     path:'edit-oficina/:id',
     component:EditOficinaComponent
   },
+
   {
-    path:'agregarOfi',
-    component:CrearOficinaComponent
-  }
-  ,
+    path:'permisos',
+    component:PermisosComponent
+  },
   {
-    path:'aretePes',
-    component:ArtePComponent
+    path:'agregar-permiso',
+    component:AgregarPermisoComponent
+  },
+  {
+    path:'editar-unidadconomicafi/:id',
+    component:EdituniconomicafisicaComponent
   },
   {
     path:'especies',
     component:EspeciesComponent
   },
   {
+    path:'edit-especie/:id',
+    component:EditEspecieComponent
+  },
+  {
+    path:'artefisica',
+    component:ArteFComponent
+  },
+  {
+    path:'edit-arte/:id',
+    component:EditArteComponent
+  },
+  {
+    path:'unifisicas/:id',
+    component:UnidadconofisicasComponent
+  },
+  
+  {
+    path:'unifisicas/:id',
+    component:UniconomicamoralComponent
+  },
+  {
+    path:'unimoral',
+    component:UniconomicamoralComponent
+  },
+  {
+    path:'socios/:id',
+    component:SociosComponent
+  },
+  {
     path:'productos',
     component:ProductosComponent
   },
   {
-    path:'socios/:id',
-    component:SocioComponent
+    path:'edit-productos/:id',
+    component:EditProductoComponent
   },
+  {
+    path:'regiones',
+    component:RegionesComponent
+  },
+  {
+    path:'edit-region/:id',
+    component:EditRegionComponent
+  },
+  {
+    path:'distritos',
+    component:DistritosComponent
+  },
+  {
+    path:'edit-distrito/:id',
+    component:EditDistritoComponent
+  },
+  {
+    path:'municipios',
+    component:MunicipiosComponent
+  },
+  {
+    path:'edit-municipio/:id',
+    component:EditMunicipioComponent
+  },
+  {
+    path:'localidades',
+    component:LocalidadesComponent
+  },
+  {
+    path:'edit-localidad/:id',
+    component:EditLocaildadComponent
+  },
+
+
+
+
+  
+  
+  
+  
+ 
+ 
 ];
 
 @NgModule({

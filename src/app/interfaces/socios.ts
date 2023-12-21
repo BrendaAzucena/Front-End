@@ -1,4 +1,4 @@
-export interface socios {
+export interface Socios {
     id: string;
     UEPAMid: string;
     CURP: string;

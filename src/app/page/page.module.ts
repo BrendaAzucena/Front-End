@@ -8,20 +8,36 @@ import { EmbarcamayorComponent } from './person/embarcamayor/embarcamayor.compon
 import { EmbarcamenorComponent } from './person/embarcamenor/embarcamenor.component';
 import { InstalacuicolaComponent } from './person/instalacuicola/instalacuicola.component';
 import { PanelComponent } from './admin/panel/panel.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OficinasComponent } from './admin/unidadeconomica/oficinas/oficinas.component';
-import { EditOficinaComponent } from './admin/unidadeconomica/edit-oficina/edit-oficina.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { CrearOficinaComponent } from './admin/unidadeconomica/crear-oficina/crear-oficina.component';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { OficinasComponent } from './admin/oficina/oficinas/oficinas.component';
+import { EditOficinaComponent } from './admin/oficina/edit-oficina/edit-oficina.component';
+import { PermisosComponent } from './admin/permisos/permisos.component';
+import { AgregarPermisoComponent } from './admin/permisos/agregar-permiso/agregar-permiso.component';
+import { EdituniconomicafisicaComponent } from './person/uniconomica/edituniconomicafisica/edituniconomicafisica.component';
+import { EspeciesComponent } from './admin/especie/especies/especies.component';
+import { ArteFComponent } from './admin/artePesca/arte-f/arte-f.component';
 import { ModalSoliComponent } from './person/modal-soli/modal-soli.component';
-import { EditUnidadFComponent } from './person/edit-unidad-f/edit-unidad-f.component';
-import { ArtePComponent } from './admin/arte-p/arte-p.component';
-import { EspeciesComponent } from './admin/especies/especies.component';
-import { ProductosComponent } from './admin/productos/productos.component';
-import { UniconomicaMoralComponent } from './person/uniconomica-moral/uniconomica-moral.component';
-import { SocioComponent } from './person/socio/socio.component';
-import { EditUniMoralComponent } from './person/edit-uni-moral/edit-uni-moral.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { UnidadconofisicasComponent } from './person/solicitud/unidadconofisicas/unidadconofisicas.component';
+import { UniconomicamoralComponent } from './person/uniconomicamoral/uniconomicamoral.component';
+import { SociosComponent } from './person/uniconomicamoral/socios/socios.component';
+import { ProductosComponent } from './admin/producto/productos/productos.component';
+import { RegionesComponent } from './admin/region/regiones/regiones.component';
+import { DistritosComponent } from './admin/distrito/distritos/distritos.component';
+import { MunicipiosComponent } from './admin/municipio/municipios/municipios.component';
+import { LocalidadesComponent } from './admin/localidad/localidades/localidades.component';
+import { EditEspecieComponent } from './admin/especie/edit-especie/edit-especie.component';
+import { EditArteComponent } from './admin/artePesca/edit-arte/edit-arte.component';
+import { EditProductoComponent } from './admin/producto/edit-producto/edit-producto.component';
+import { EditRegionComponent } from './admin/region/edit-region/edit-region.component';
+import { EditDistritoComponent } from './admin/distrito/edit-distrito/edit-distrito.component';
+import { EditMunicipioComponent } from './admin/municipio/edit-municipio/edit-municipio.component';
+import { EditLocaildadComponent } from './admin/localidad/edit-locaildad/edit-locaildad.component';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -33,15 +49,28 @@ import { EditUniMoralComponent } from './person/edit-uni-moral/edit-uni-moral.co
     PanelComponent,
     OficinasComponent,
     EditOficinaComponent,
-    CrearOficinaComponent,
-    ModalSoliComponent,
-    EditUnidadFComponent,
-    ArtePComponent,
+    PermisosComponent,
+    AgregarPermisoComponent,
+    EdituniconomicafisicaComponent,
     EspeciesComponent,
+    ArteFComponent,
+    ModalSoliComponent,
+    UnidadconofisicasComponent,
+    UniconomicamoralComponent,
+    SociosComponent,
     ProductosComponent,
-    UniconomicaMoralComponent,
-    SocioComponent,
-    EditUniMoralComponent,
+    RegionesComponent,
+    DistritosComponent,
+    MunicipiosComponent,
+    LocalidadesComponent,
+    EditEspecieComponent,
+    EditArteComponent,
+    EditProductoComponent,
+    EditRegionComponent,
+    EditDistritoComponent,
+    EditMunicipioComponent,
+    EditLocaildadComponent,
+    
    
   ],
   imports: [
@@ -50,13 +79,16 @@ import { EditUniMoralComponent } from './person/edit-uni-moral/edit-uni-moral.co
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatSnackBarModule,
+    
    
   ]
 ,
 exports: [
   SolicitudComponent ,
   UniconomicaComponent,
+
+  
   
 ]
 })

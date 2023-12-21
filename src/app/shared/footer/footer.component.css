@@ -1,6 +1,9 @@
 .color2{
     background-color: #7B1E34;
     color: white;
+   
+    
+bottom: 0;
 }
 
 .posi{
@@ -27,7 +30,11 @@ object-fit: scale-down;
   
 }
 footer{
-    clear: both;
+    width: 100%;
+    margin-bottom: 0;
+   margin-left: 0;
+ 
+   
 }
 
 

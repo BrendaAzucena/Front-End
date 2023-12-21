@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-modal-soli',
   templateUrl: './modal-soli.component.html',
@@ -22,7 +23,7 @@ export class ModalSoliComponent {
         this.router.navigate(['uniconomica']);
         break;
       case 'altaM':
-        this.router.navigate(['uniconomicamoral']);
+        this.router.navigate(['unimoral']);
         break;
       case 'modificarEmail':
 
